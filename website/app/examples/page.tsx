@@ -209,8 +209,8 @@ export default function ExamplesPage() {
                     disabled={!user}
                     className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
                       userVote === 1
-                        ? "bg-terracotta text-white"
-                        : "bg-cream-dark/50 text-brown/30 hover:bg-terracotta/10 hover:text-terracotta"
+                        ? "bg-green-deep text-white"
+                        : "bg-cream-dark/50 text-brown/30 hover:bg-green-light hover:text-green-deep"
                     } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
                     title={user ? t("upvote") : t("signInToVote")}
                   >
@@ -221,9 +221,9 @@ export default function ExamplesPage() {
                   <span
                     className={`text-xs font-semibold ${
                       score > 0
-                        ? "text-terracotta"
+                        ? "text-green-deep"
                         : score < 0
-                          ? "text-brown/40"
+                          ? "text-terracotta"
                           : "text-brown/30"
                     }`}
                   >
@@ -234,8 +234,8 @@ export default function ExamplesPage() {
                     disabled={!user}
                     className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
                       userVote === -1
-                        ? "bg-brown/60 text-white"
-                        : "bg-cream-dark/50 text-brown/30 hover:bg-brown/10 hover:text-brown/60"
+                        ? "bg-terracotta text-white"
+                        : "bg-cream-dark/50 text-brown/30 hover:bg-terracotta-light hover:text-terracotta"
                     } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
                     title={user ? t("downvote") : t("signInToVote")}
                   >

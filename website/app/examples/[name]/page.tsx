@@ -149,8 +149,8 @@ export default function ExampleDetailPage() {
             disabled={!user}
             className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
               userVote === 1
-                ? "bg-terracotta text-white"
-                : "bg-cream-dark/50 text-brown/30 hover:bg-terracotta/10 hover:text-terracotta"
+                ? "bg-green-deep text-white"
+                : "bg-cream-dark/50 text-brown/30 hover:bg-green-light hover:text-green-deep"
             } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -160,9 +160,9 @@ export default function ExampleDetailPage() {
           <span
             className={`text-sm font-bold ${
               score > 0
-                ? "text-terracotta"
+                ? "text-green-deep"
                 : score < 0
-                  ? "text-brown/40"
+                  ? "text-terracotta"
                   : "text-brown/30"
             }`}
           >
@@ -173,8 +173,8 @@ export default function ExampleDetailPage() {
             disabled={!user}
             className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
               userVote === -1
-                ? "bg-brown/60 text-white"
-                : "bg-cream-dark/50 text-brown/30 hover:bg-brown/10 hover:text-brown/60"
+                ? "bg-terracotta text-white"
+                : "bg-cream-dark/50 text-brown/30 hover:bg-terracotta-light hover:text-terracotta"
             } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
