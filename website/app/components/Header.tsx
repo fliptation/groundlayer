@@ -34,7 +34,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-green-deep flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
@@ -62,7 +62,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -79,7 +79,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center text-brown-dark hover:text-green-deep transition-colors"
+            className="lg:hidden w-10 h-10 flex items-center justify-center text-brown-dark hover:text-green-deep transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={t("toggleMenu")}
             aria-expanded={menuOpen}
@@ -113,7 +113,7 @@ export default function Header() {
       {/* Mobile nav */}
       {menuOpen && (
         <nav
-          className="md:hidden bg-cream border-t border-brown-light/20 animate-fade-in"
+          className="lg:hidden bg-cream border-t border-brown-light/20 animate-fade-in"
           style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
         >
           <div className="px-6 py-6 flex flex-col gap-1">
