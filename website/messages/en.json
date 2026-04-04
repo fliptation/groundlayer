@@ -104,6 +104,19 @@
     "startContributing": "Start Contributing",
     "beginLocally": "Begin Locally"
   },
+  "examples": {
+    "eyebrow": "Real-World Systems",
+    "title": "Already Happening",
+    "subtitle": "These aren't theories. These are real organizations and projects around the world already building the systems we need.",
+    "searchPlaceholder": "Search examples...",
+    "all": "All ({count})",
+    "exampleCount": "{count, plural, one {example} other {examples}}",
+    "inLayer": "in",
+    "matching": "matching",
+    "noResults": "No examples found. Try adjusting your search or filters.",
+    "ctaText": "Know a project that should be listed here?",
+    "ctaButton": "Submit a Project"
+  },
   "layers": {
     "layerNumber": "Layer {number}",
     "explore": "Explore",
