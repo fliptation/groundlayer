@@ -12,7 +12,7 @@ Our current systems were built around extraction, control, and competition. They
 
 ## What We're Building
 
-Ground Layer is a living blueprint for reorganizing how we live together — starting from the ground up. It covers twelve interconnected layers of human life:
+Ground Layer is a living blueprint for reorganizing how we live together — starting from the ground up. It covers thirteen interconnected layers of human life:
 
 1. **Food & Land** — How we grow, share, and steward the earth
 2. **Health** — How we care for bodies, minds, and communities
@@ -26,8 +26,9 @@ Ground Layer is a living blueprint for reorganizing how we live together — sta
 10. **Transportation & Mobility** — How we move people and goods without destroying what we love
 11. **Communication & Media** — How we share information and tell our stories
 12. **Safety & Conflict Resolution** — How we protect each other and resolve harm
+13. **Human Rights** — How we protect dignity and hold power accountable
 
-These layers aren't separate departments. They're deeply connected. When you fix food systems, health improves. When you decentralize energy, communities gain power. When education is free, innovation accelerates. When housing is affordable, health and safety improve. When communication is open, governance becomes real.
+These layers aren't separate departments. They're deeply connected. When you fix food systems, health improves. When you decentralize energy, communities gain power. When education is free, innovation accelerates. When housing is affordable, health and safety improve. When communication is open, governance becomes real. When human rights are protected, all other layers are strengthened.
 
 ## How It's Different
 
@@ -65,6 +66,13 @@ Not a utopia. Not perfection. Just a world where:
 - The economy serves life, not the other way around
 - Knowledge flows freely
 - The planet heals
+- Everyone has a dignified place to live
+- Technology serves communities, not corporations
+- Clean water is a right, not a commodity
+- Streets are built for people, not just cars
+- Information flows freely and truthfully
+- Safety comes from connection, not punishment
+- Human rights are universal and enforceable
 
 This isn't idealism. It's engineering. We're designing systems that make these outcomes the natural result, not the exception.
 

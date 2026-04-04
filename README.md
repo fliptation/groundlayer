@@ -29,12 +29,16 @@ Less control and force. More unity in people. Thirteen interconnected layers cov
 
 Read the full [Vision](docs/vision.md) and [Principles](docs/principles.md).
 
+## Real-World Examples
+
+Each layer includes curated examples of organizations already doing this work — 180+ projects across 50+ countries, from Mondragon cooperatives in Spain to community mesh networks in rural Mexico. Browse them at [groundlayer-iota.vercel.app/examples](https://groundlayer-iota.vercel.app/examples). Vote on the ones that inspire you and leave comments.
+
 ## Get Involved
 
 - **[Read the docs](docs/)** — understand the system
 - **[Get started](docs/get-started.md)** — begin where you are
 - **[Contribute](CONTRIBUTING.md)** — help improve this blueprint
-- **[Visit the website](https://groundlayer.org)** — explore the vision online
+- **[Visit the website](https://groundlayer-iota.vercel.app)** — explore the vision online
 
 ## Website
 
