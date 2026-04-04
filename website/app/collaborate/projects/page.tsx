@@ -21,6 +21,7 @@ type Project = {
   status: string;
   createdAt: string;
   userName: string | null;
+  userId: string;
 };
 
 const statusVariant: Record<string, "default" | "secondary" | "outline"> = {
@@ -157,6 +158,26 @@ export default function ProjectsPage() {
                   <span className="ml-auto text-brown/30">
                     {tCommon("by", { name: project.userName || tCommon("anonymous") })}
                   </span>
+                  {user?.id === project.userId && (
+                    <div className="flex items-center gap-2 ml-2">
+                      <Link
+                        href={`/collaborate/projects/${project.id}/edit`}
+                        className="text-brown/40 hover:text-terracotta transition-colors"
+                      >
+                        {t("edit")}
+                      </Link>
+                      <button
+                        onClick={async () => {
+                          if (!confirm(t("confirmDelete"))) return;
+                          const res = await fetch(`/api/projects/${project.id}`, { method: "DELETE" });
+                          if (res.ok) setProjects((prev) => prev.filter((p) => p.id !== project.id));
+                        }}
+                        className="text-brown/40 hover:text-red-600 transition-colors"
+                      >
+                        {t("delete")}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>

@@ -645,7 +645,20 @@
     "newProject": "New Project",
     "noProjects": "No projects yet",
     "beFirst": "Be the first to share a project!",
-    "signInToSubmit": "Sign in to submit a project."
+    "signInToSubmit": "Sign in to submit a project.",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this project?",
+    "editProject": "Edit Project",
+    "fieldTitle": "Project Title",
+    "fieldDescription": "Description",
+    "fieldLayer": "Layer",
+    "fieldStatus": "Status",
+    "fieldLocation": "Location",
+    "fieldWebsite": "Website",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "cancel": "Cancel"
   },
   "auth": {
     "signIn": {
