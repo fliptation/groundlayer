@@ -95,7 +95,7 @@ export default async function HeroSection() {
           >
             <Link
               href="/vision"
-              className="group inline-flex items-center gap-2 px-6 py-3 bg-brown-dark text-white rounded-full text-sm font-semibold hover:bg-terracotta transition-all duration-300 hover:shadow-lg hover:shadow-brown-dark/15"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-green-deep text-white rounded-full text-sm font-semibold hover:bg-terracotta transition-all duration-300 hover:shadow-lg hover:shadow-green-deep/20"
             >
               {t("readTheVision")}
               <svg

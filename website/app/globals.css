@@ -135,13 +135,16 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
 }
 
-a {
+a:where(:not([class*="text-"])) {
   color: var(--terracotta);
+}
+
+a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-a:hover {
+a:where(:not([class*="text-"])):hover {
   color: var(--terracotta-dark);
 }
 
