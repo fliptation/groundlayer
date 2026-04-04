@@ -2,22 +2,7 @@ import HeroSection from "./components/HeroSection";
 import LayerCard from "./components/LayerCard";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-
-const layerSlugs = [
-  { slug: "food-and-land", number: 1, icon: "\u{1F331}" },
-  { slug: "health", number: 2, icon: "\u{1F49A}" },
-  { slug: "governance", number: 3, icon: "\u{1F91D}" },
-  { slug: "economy", number: 4, icon: "\u{1F300}" },
-  { slug: "education", number: 5, icon: "\u{1F4D6}" },
-  { slug: "energy", number: 6, icon: "\u{2600}\u{FE0F}" },
-  { slug: "housing", number: 7, icon: "\u{1F3E0}" },
-  { slug: "technology", number: 8, icon: "\u{1F527}" },
-  { slug: "water", number: 9, icon: "\u{1F4A7}" },
-  { slug: "transportation", number: 10, icon: "\u{1F6B2}" },
-  { slug: "communication", number: 11, icon: "\u{1F4E1}" },
-  { slug: "safety", number: 12, icon: "\u{1F6E1}\u{FE0F}" },
-  { slug: "human-rights", number: 13, icon: "\u{270A}" },
-];
+import { LAYERS } from "@/lib/layers";
 
 const principleKeys = ["decentralize", "transparent", "regenerative", "voluntary"] as const;
 
@@ -49,7 +34,7 @@ export default async function Home() {
   const t = await getTranslations("home");
   const tl = await getTranslations("layers");
 
-  const layers = layerSlugs.map((l) => ({
+  const layers = LAYERS.map((l) => ({
     ...l,
     title: tl(`items.${l.slug}.title`),
     description: tl(`items.${l.slug}.description`),

@@ -1,22 +1,59 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { EXAMPLES } from "@/lib/examples";
 import { LAYERS } from "@/lib/layers";
+import { useAuth } from "@/app/components/AuthProvider";
+
+type VoteData = Record<
+  string,
+  { score: number; userVote: number | null; commentCount: number }
+>;
 
 export default function ExamplesPage() {
   const t = useTranslations("examples");
   const tl = useTranslations("layers");
+  const { user } = useAuth();
   const [activeLayer, setActiveLayer] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [voteData, setVoteData] = useState<VoteData>({});
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const layerParam = params.get("layer");
     if (layerParam) setActiveLayer(Number(layerParam));
   }, []);
+
+  const loadVotes = useCallback(async () => {
+    const names = EXAMPLES.map((e) => encodeURIComponent(e.name)).join(",");
+    const res = await fetch(`/api/examples/votes?names=${names}`);
+    if (res.ok) setVoteData(await res.json());
+  }, []);
+
+  useEffect(() => {
+    loadVotes();
+  }, [loadVotes]);
+
+  async function handleVote(name: string, value: 1 | -1) {
+    if (!user) return;
+    const res = await fetch(
+      `/api/examples/${encodeURIComponent(name)}/vote`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ value }),
+      }
+    );
+    if (res.ok) {
+      const { score, userVote } = await res.json();
+      setVoteData((prev) => ({
+        ...prev,
+        [name]: { ...prev[name], score, userVote, commentCount: prev[name]?.commentCount ?? 0 },
+      }));
+    }
+  }
 
   const filtered = EXAMPLES.filter((ex) => {
     if (activeLayer && ex.layer !== activeLayer) return false;
@@ -44,6 +81,10 @@ export default function ExamplesPage() {
 
   function layerIcon(num: number) {
     return LAYERS.find((l) => l.number === num)?.icon ?? "";
+  }
+
+  function slugify(name: string) {
+    return encodeURIComponent(name);
   }
 
   return (
@@ -146,66 +187,141 @@ export default function ExamplesPage() {
 
       {/* Examples grid */}
       <div className="grid md:grid-cols-2 gap-4">
-        {filtered.map((ex) => (
-          <a
-            key={ex.name}
-            href={ex.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-warm-white border border-brown-light/12 rounded-2xl p-6 hover:border-green-muted/30 transition-all duration-300"
-          >
-            <div className="flex items-start justify-between gap-3 mb-2">
-              <h3
-                className="text-green-deep font-bold group-hover:text-terracotta transition-colors duration-300"
-                style={{ fontFamily: "var(--font-playfair), serif" }}
-              >
-                {ex.name}
-              </h3>
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                className="text-brown/20 group-hover:text-terracotta shrink-0 mt-1 transition-colors duration-300"
-              >
-                <path d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
-            </div>
+        {filtered.map((ex) => {
+          const data = voteData[ex.name];
+          const score = data?.score ?? 0;
+          const userVote = data?.userVote ?? null;
+          const commentCount = data?.commentCount ?? 0;
 
-            <p
-              className="text-brown/40 text-xs mb-2"
-              style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
-            >
-              {ex.location}
-              {ex.yearFounded ? ` · Est. ${ex.yearFounded}` : ""}
-              {` · ${layerIcon(ex.layer)} ${layerName(ex.layer)}`}
-            </p>
-
-            <p
-              className="text-brown/60 text-sm leading-relaxed mb-3"
-              style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
-            >
-              {ex.description}
-            </p>
-
+          return (
             <div
-              className="flex flex-wrap gap-1.5"
-              style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+              key={ex.name}
+              className="group bg-warm-white border border-brown-light/12 rounded-2xl p-6 hover:border-green-muted/30 transition-all duration-300"
             >
-              {ex.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] px-2 py-0.5 rounded-full bg-green-light/50 text-green-mid"
+              <div className="flex gap-4">
+                {/* Vote column */}
+                <div
+                  className="flex flex-col items-center gap-0.5 shrink-0 pt-0.5"
+                  style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                 >
-                  {tag}
-                </span>
-              ))}
+                  <button
+                    onClick={() => handleVote(ex.name, 1)}
+                    disabled={!user}
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
+                      userVote === 1
+                        ? "bg-terracotta text-white"
+                        : "bg-cream-dark/50 text-brown/30 hover:bg-terracotta/10 hover:text-terracotta"
+                    } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
+                    title={user ? t("upvote") : t("signInToVote")}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 4l-8 8h5v8h6v-8h5z" />
+                    </svg>
+                  </button>
+                  <span
+                    className={`text-xs font-semibold ${
+                      score > 0
+                        ? "text-terracotta"
+                        : score < 0
+                          ? "text-brown/40"
+                          : "text-brown/30"
+                    }`}
+                  >
+                    {score}
+                  </span>
+                  <button
+                    onClick={() => handleVote(ex.name, -1)}
+                    disabled={!user}
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
+                      userVote === -1
+                        ? "bg-brown/60 text-white"
+                        : "bg-cream-dark/50 text-brown/30 hover:bg-brown/10 hover:text-brown/60"
+                    } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
+                    title={user ? t("downvote") : t("signInToVote")}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 20l8-8h-5V4H9v8H4z" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <Link
+                      href={`/examples/${slugify(ex.name)}`}
+                      className="text-green-deep font-bold hover:text-terracotta transition-colors duration-300"
+                      style={{ fontFamily: "var(--font-playfair), serif" }}
+                    >
+                      {ex.name}
+                    </Link>
+                    <a
+                      href={ex.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 mt-1"
+                      title={t("visitWebsite")}
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        className="text-brown/20 hover:text-terracotta transition-colors duration-300"
+                      >
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                      </svg>
+                    </a>
+                  </div>
+
+                  <p
+                    className="text-brown/40 text-xs mb-2"
+                    style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                  >
+                    {ex.location}
+                    {ex.yearFounded ? ` · Est. ${ex.yearFounded}` : ""}
+                    {` · ${layerIcon(ex.layer)} ${layerName(ex.layer)}`}
+                  </p>
+
+                  <p
+                    className="text-brown/60 text-sm leading-relaxed mb-3"
+                    style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                  >
+                    {ex.description}
+                  </p>
+
+                  <div
+                    className="flex items-center justify-between"
+                    style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                  >
+                    <div className="flex flex-wrap gap-1.5">
+                      {ex.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-green-light/50 text-green-mid"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <Link
+                      href={`/examples/${slugify(ex.name)}`}
+                      className="text-brown/30 hover:text-terracotta text-xs flex items-center gap-1 shrink-0 ml-2 transition-colors duration-200"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                      </svg>
+                      {commentCount > 0 ? commentCount : ""}
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
-        ))}
+          );
+        })}
       </div>
 
       {filtered.length === 0 && (

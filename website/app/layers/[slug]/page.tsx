@@ -2,25 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getExamplesByLayer } from "@/lib/examples";
 import { getTranslations } from "next-intl/server";
-
-const layerSlugs = [
-  { slug: "food-and-land", number: 1, icon: "\u{1F331}" },
-  { slug: "health", number: 2, icon: "\u{1F49A}" },
-  { slug: "governance", number: 3, icon: "\u{1F91D}" },
-  { slug: "economy", number: 4, icon: "\u{1F300}" },
-  { slug: "education", number: 5, icon: "\u{1F4D6}" },
-  { slug: "energy", number: 6, icon: "\u{2600}\u{FE0F}" },
-  { slug: "housing", number: 7, icon: "\u{1F3E0}" },
-  { slug: "technology", number: 8, icon: "\u{1F527}" },
-  { slug: "water", number: 9, icon: "\u{1F4A7}" },
-  { slug: "transportation", number: 10, icon: "\u{1F6B2}" },
-  { slug: "communication", number: 11, icon: "\u{1F4E1}" },
-  { slug: "safety", number: 12, icon: "\u{1F6E1}\u{FE0F}" },
-  { slug: "human-rights", number: 13, icon: "\u{270A}" },
-];
+import { LAYERS } from "@/lib/layers";
 
 export function generateStaticParams() {
-  return layerSlugs.map((layer) => ({ slug: layer.slug }));
+  return LAYERS.map((layer) => ({ slug: layer.slug }));
 }
 
 export async function generateMetadata({
@@ -29,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const layer = layerSlugs.find((l) => l.slug === slug);
+  const layer = LAYERS.find((l) => l.slug === slug);
   if (!layer) return { title: "Not Found" };
   const t = await getTranslations("metadata");
   const tl = await getTranslations("layers");
@@ -45,7 +30,7 @@ export default async function LayerPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const layer = layerSlugs.find((l) => l.slug === slug);
+  const layer = LAYERS.find((l) => l.slug === slug);
 
   if (!layer) {
     notFound();
@@ -54,10 +39,10 @@ export default async function LayerPage({
   const t = await getTranslations("layers");
   const tc = await getTranslations("common");
 
-  const currentIndex = layerSlugs.findIndex((l) => l.slug === slug);
-  const prevLayer = currentIndex > 0 ? layerSlugs[currentIndex - 1] : null;
+  const currentIndex = LAYERS.findIndex((l) => l.slug === slug);
+  const prevLayer = currentIndex > 0 ? LAYERS[currentIndex - 1] : null;
   const nextLayer =
-    currentIndex < layerSlugs.length - 1 ? layerSlugs[currentIndex + 1] : null;
+    currentIndex < LAYERS.length - 1 ? LAYERS[currentIndex + 1] : null;
 
   const solutionKeys = Object.keys(t.raw(`items.${slug}.solutions`));
   const actionKeys = Object.keys(t.raw(`items.${slug}.actions`));
@@ -71,7 +56,7 @@ export default async function LayerPage({
             className="flex flex-row md:flex-col gap-1.5 overflow-x-auto md:overflow-visible pb-4 md:pb-0 md:sticky md:top-24"
             style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
           >
-            {layerSlugs.map((l) => (
+            {LAYERS.map((l) => (
               <Link
                 key={l.slug}
                 href={`/layers/${l.slug}`}

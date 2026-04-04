@@ -7,23 +7,36 @@ import { eq, desc, sql } from "drizzle-orm";
 
 export async function GET(req: NextRequest) {
   const layer = req.nextUrl.searchParams.get("layer");
+  const page = Math.max(1, parseInt(req.nextUrl.searchParams.get("page") || "1"));
+  const limit = Math.min(100, Math.max(1, parseInt(req.nextUrl.searchParams.get("limit") || "20")));
+  const offset = (page - 1) * limit;
 
-  const rows = await db
-    .select({
-      id: discussions.id,
-      title: discussions.title,
-      layer: discussions.layer,
-      createdAt: discussions.createdAt,
-      userName: user.name,
-      userId: discussions.userId,
-      replyCount: sql<number>`(SELECT count(*) FROM replies WHERE discussion_id = ${discussions.id})`,
-    })
-    .from(discussions)
-    .leftJoin(user, eq(discussions.userId, user.id))
-    .where(layer ? eq(discussions.layer, parseInt(layer)) : undefined)
-    .orderBy(desc(discussions.updatedAt));
+  const where = layer ? eq(discussions.layer, parseInt(layer)) : undefined;
 
-  return NextResponse.json(rows);
+  const [rows, [{ count }]] = await Promise.all([
+    db
+      .select({
+        id: discussions.id,
+        title: discussions.title,
+        layer: discussions.layer,
+        createdAt: discussions.createdAt,
+        userName: user.name,
+        userId: discussions.userId,
+        replyCount: sql<number>`(SELECT count(*) FROM replies WHERE discussion_id = ${discussions.id})`,
+      })
+      .from(discussions)
+      .leftJoin(user, eq(discussions.userId, user.id))
+      .where(where)
+      .orderBy(desc(discussions.updatedAt))
+      .limit(limit)
+      .offset(offset),
+    db
+      .select({ count: sql<number>`count(*)` })
+      .from(discussions)
+      .where(where),
+  ]);
+
+  return NextResponse.json({ data: rows, total: Number(count), page, pageSize: limit, hasMore: offset + rows.length < Number(count) });
 }
 
 export async function POST(req: NextRequest) {

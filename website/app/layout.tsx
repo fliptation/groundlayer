@@ -33,8 +33,17 @@ const dmSans = DM_Sans({
 export async function generateMetadata() {
   const t = await getTranslations("metadata");
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
     title: t("home.title"),
     description: t("home.description"),
+    openGraph: {
+      type: 'website' as const,
+      siteName: t("home.title"),
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+    },
   };
 }
 
@@ -52,10 +61,13 @@ export default async function RootLayout({
       className={cn("h-full", "antialiased", playfair.variable, sourceSerif.variable, dmSans.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-full flex flex-col bg-cream text-foreground">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-green-deep focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
+          Skip to content
+        </a>
         <NextIntlClientProvider messages={messages}>
           <AuthProvider>
             <Header />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" className="flex-1">{children}</main>
             <Footer />
           </AuthProvider>
         </NextIntlClientProvider>

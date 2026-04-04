@@ -115,7 +115,21 @@
     "matching": "matching",
     "noResults": "No examples found. Try adjusting your search or filters.",
     "ctaText": "Know a project that should be listed here?",
-    "ctaButton": "Submit a Project"
+    "ctaButton": "Submit a Project",
+    "upvote": "Upvote",
+    "downvote": "Downvote",
+    "signInToVote": "Sign in to vote",
+    "visitWebsite": "Visit Website",
+    "backToExamples": "Back to examples",
+    "comments": "Comments",
+    "commentPlaceholder": "Share your thoughts about this project...",
+    "postComment": "Post Comment",
+    "posting": "Posting...",
+    "signIn": "Sign in",
+    "toComment": "to leave a comment",
+    "noComments": "No comments yet. Be the first to share your thoughts.",
+    "notFound": "Example not found",
+    "anonymous": "Anonymous"
   },
   "layers": {
     "layerNumber": "Layer {number}",

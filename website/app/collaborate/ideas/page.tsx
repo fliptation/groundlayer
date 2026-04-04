@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import LayerFilter from "@/app/components/LayerFilter";
-import { getLayerName, getLayerIcon } from "@/lib/layers";
+import { getLayerByNumber } from "@/lib/layers";
 import { useAuth } from "@/app/components/AuthProvider";
 
 type Idea = {
@@ -33,6 +33,7 @@ export default function IdeasPage() {
   const t = useTranslations("ideas");
   const tCollaborate = useTranslations("collaborate");
   const tCommon = useTranslations("common");
+  const tLayers = useTranslations("layers");
   const [ideas, setIdeas] = useState<Idea[]>([]);
   const [layerFilter, setLayerFilter] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,7 @@ export default function IdeasPage() {
     fetch(url)
       .then((r) => r.json())
       .then((data) => {
-        setIdeas(data);
+        setIdeas(data.data ?? data);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -170,7 +171,7 @@ export default function IdeasPage() {
                     </p>
                     <div className="flex flex-wrap items-center gap-3 text-xs text-brown/40 font-sans">
                       <Badge variant="outline" className="gap-1 font-normal">
-                        {getLayerIcon(idea.layer)} {getLayerName(idea.layer)}
+                        {getLayerByNumber(idea.layer)?.icon} {tLayers(`items.${getLayerByNumber(idea.layer)?.slug}.title`)}
                       </Badge>
                       <span className="ml-auto text-brown/30">
                         {tCommon("by", { name: idea.userName || tCommon("anonymous") })}

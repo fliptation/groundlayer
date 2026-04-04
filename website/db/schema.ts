@@ -116,6 +116,33 @@ export const discussions = pgTable("discussions", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
+export const exampleVotes = pgTable(
+  "example_votes",
+  {
+    id: serial("id").primaryKey(),
+    exampleName: text("example_name").notNull(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id),
+    value: integer("value").notNull(), // +1 or -1
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [
+    uniqueIndex("example_votes_unique").on(table.exampleName, table.userId),
+  ]
+);
+
+export const exampleComments = pgTable("example_comments", {
+  id: serial("id").primaryKey(),
+  exampleName: text("example_name").notNull(),
+  content: text("content").notNull(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => user.id),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
 export const replies = pgTable("replies", {
   id: serial("id").primaryKey(),
   content: text("content").notNull(),

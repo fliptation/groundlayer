@@ -8,8 +8,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { getLayerName, getLayerIcon } from "@/lib/layers";
+import { getLayerByNumber } from "@/lib/layers";
 import { useAuth } from "@/app/components/AuthProvider";
+import { useTranslations } from "next-intl";
 
 type Reply = {
   id: number;
@@ -36,6 +37,7 @@ export default function DiscussionDetailPage({
 }) {
   const { id } = use(params);
   const { user } = useAuth();
+  const tLayers = useTranslations("layers");
   const [discussion, setDiscussion] = useState<Discussion | null>(null);
   const [replies, setReplies] = useState<Reply[]>([]);
   const [loading, setLoading] = useState(true);
@@ -124,7 +126,7 @@ export default function DiscussionDetailPage({
         </h1>
         <div className="flex flex-wrap items-center gap-3 text-xs text-brown/40 font-sans">
           <Badge variant="outline" className="gap-1 font-normal">
-            {getLayerIcon(discussion.layer)} {getLayerName(discussion.layer)}
+            {getLayerByNumber(discussion.layer)?.icon} {tLayers(`items.${getLayerByNumber(discussion.layer)?.slug}.title`)}
           </Badge>
           <span>Started by {discussion.userName || "Anonymous"}</span>
           <span className="text-brown/25">

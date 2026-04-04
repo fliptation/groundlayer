@@ -10,12 +10,15 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { LAYERS } from "@/lib/layers";
 import { useAuth } from "@/app/components/AuthProvider";
+import { useTranslations } from "next-intl";
 
 export default function NewProjectPage() {
   const router = useRouter();
+  const tLayers = useTranslations("layers");
   const { user, isLoading } = useAuth();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   if (!isLoading && !user) {
     return (
@@ -45,6 +48,16 @@ export default function NewProjectPage() {
       status: form.get("status"),
     };
 
+    const errors: Record<string, string> = {};
+    if (!body.title || (body.title as string).trim() === "") errors.title = "Title is required";
+    if (!body.description || (body.description as string).trim() === "") errors.description = "Description is required";
+    if (!body.layer || (body.layer as string).trim() === "") errors.layer = "Layer is required";
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      setSubmitting(false);
+      return;
+    }
+
     const res = await fetch("/api/projects", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -58,7 +71,7 @@ export default function NewProjectPage() {
       return;
     }
 
-    router.push("/collaborate/projects");
+    router.push("/collaborate/thank-you");
   }
 
   return (
@@ -87,7 +100,9 @@ export default function NewProjectPage() {
                 required
                 placeholder="e.g. Riverside Community Garden"
                 className="bg-cream border-brown-light/20 focus-visible:ring-green-sage/30"
+                onChange={() => setFieldErrors((prev) => { const { title, ...rest } = prev; return rest; })}
               />
+              {fieldErrors.title && <p className="text-destructive text-xs mt-1">{fieldErrors.title}</p>}
             </div>
 
             <div className="space-y-2">
@@ -99,7 +114,9 @@ export default function NewProjectPage() {
                 rows={4}
                 placeholder="What is this project about? What problem does it address?"
                 className="bg-cream border-brown-light/20 focus-visible:ring-green-sage/30 resize-none"
+                onChange={() => setFieldErrors((prev) => { const { description, ...rest } = prev; return rest; })}
               />
+              {fieldErrors.description && <p className="text-destructive text-xs mt-1">{fieldErrors.description}</p>}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -110,14 +127,16 @@ export default function NewProjectPage() {
                   name="layer"
                   required
                   className="flex h-9 w-full rounded-md border border-brown-light/20 bg-cream px-3 py-1 text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-sage/30 font-sans"
+                  onChange={() => setFieldErrors((prev) => { const { layer, ...rest } = prev; return rest; })}
                 >
                   <option value="">Select a layer</option>
                   {LAYERS.map((l) => (
-                    <option key={l.id} value={l.id}>
-                      {l.icon} {l.name}
+                    <option key={l.number} value={l.number}>
+                      {l.icon} {tLayers(`items.${l.slug}.title`)}
                     </option>
                   ))}
                 </select>
+                {fieldErrors.layer && <p className="text-destructive text-xs mt-1">{fieldErrors.layer}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="status">Status</Label>

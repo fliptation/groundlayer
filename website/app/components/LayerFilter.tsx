@@ -14,11 +14,14 @@ export default function LayerFilter({ selected, onChange }: LayerFilterProps) {
 
   return (
     <div
+      role="group"
+      aria-label="Filter by layer"
       className="flex flex-wrap gap-2"
       style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
     >
       <button
         onClick={() => onChange(null)}
+        aria-pressed={selected === null}
         className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
           selected === null
             ? "bg-brown-dark text-white"
@@ -29,10 +32,11 @@ export default function LayerFilter({ selected, onChange }: LayerFilterProps) {
       </button>
       {LAYERS.map((layer) => (
         <button
-          key={layer.id}
-          onClick={() => onChange(selected === layer.id ? null : layer.id)}
+          key={layer.number}
+          onClick={() => onChange(selected === layer.number ? null : layer.number)}
+          aria-pressed={selected === layer.number}
           className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
-            selected === layer.id
+            selected === layer.number
               ? "bg-brown-dark text-white"
               : "bg-cream-dark/50 text-brown/50 hover:text-brown-dark hover:bg-cream-dark"
           }`}

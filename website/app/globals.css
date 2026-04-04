@@ -233,6 +233,55 @@ html {
   background-size: 100% 60px;
 }
 
+/* Thank-you page animations */
+@keyframes floatLeaf {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20vh) rotate(360deg);
+  }
+}
+
+@keyframes orbitSlow {
+  0% { transform: rotate(0deg) translateX(12px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+}
+
+@keyframes orbitSlowReverse {
+  0% { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+  100% { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-float-leaf {
+  animation: floatLeaf linear infinite;
+}
+
+.animate-orbit-slow {
+  animation: orbitSlow 6s linear infinite;
+}
+
+.animate-orbit-slow-reverse {
+  animation: orbitSlowReverse 8s linear infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
 /* Decorative leaf bullet */
 .leaf-list li::before {
   content: "\u{1F33F}";
@@ -284,5 +333,14 @@ html {
   }
   html {
     @apply font-sans;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

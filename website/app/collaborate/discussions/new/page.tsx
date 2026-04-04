@@ -10,12 +10,15 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { LAYERS } from "@/lib/layers";
 import { useAuth } from "@/app/components/AuthProvider";
+import { useTranslations } from "next-intl";
 
 export default function NewDiscussionPage() {
   const router = useRouter();
   const { user, isLoading } = useAuth();
+  const tLayers = useTranslations("layers");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   if (!isLoading && !user) {
     return (
@@ -39,6 +42,15 @@ export default function NewDiscussionPage() {
       layer: form.get("layer"),
       firstReply: form.get("firstReply"),
     };
+
+    const errors: Record<string, string> = {};
+    if (!body.title || (body.title as string).trim() === "") errors.title = "Title is required";
+    if (!body.layer || (body.layer as string).trim() === "") errors.layer = "Layer is required";
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      setSubmitting(false);
+      return;
+    }
 
     const res = await fetch("/api/discussions", {
       method: "POST",
@@ -82,7 +94,9 @@ export default function NewDiscussionPage() {
                 required
                 placeholder="What do you want to discuss?"
                 className="bg-cream border-brown-light/20 focus-visible:ring-green-sage/30"
+                onChange={() => setFieldErrors((prev) => { const { title, ...rest } = prev; return rest; })}
               />
+              {fieldErrors.title && <p className="text-destructive text-xs mt-1">{fieldErrors.title}</p>}
             </div>
 
             <div className="space-y-2">
@@ -92,14 +106,16 @@ export default function NewDiscussionPage() {
                 name="layer"
                 required
                 className="flex h-9 w-full rounded-md border border-brown-light/20 bg-cream px-3 py-1 text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-sage/30 font-sans"
+                onChange={() => setFieldErrors((prev) => { const { layer, ...rest } = prev; return rest; })}
               >
                 <option value="">Select a layer</option>
                 {LAYERS.map((l) => (
-                  <option key={l.id} value={l.id}>
-                    {l.icon} {l.name}
+                  <option key={l.number} value={l.number}>
+                    {l.icon} {tLayers(`items.${l.slug}.title`)}
                   </option>
                 ))}
               </select>
+              {fieldErrors.layer && <p className="text-destructive text-xs mt-1">{fieldErrors.layer}</p>}
             </div>
 
             <div className="space-y-2">

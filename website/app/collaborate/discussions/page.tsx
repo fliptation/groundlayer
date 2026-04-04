@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import LayerFilter from "@/app/components/LayerFilter";
-import { getLayerName, getLayerIcon } from "@/lib/layers";
+import { getLayerByNumber } from "@/lib/layers";
 import { useAuth } from "@/app/components/AuthProvider";
 
 type Discussion = {
@@ -24,6 +24,7 @@ export default function DiscussionsPage() {
   const t = useTranslations("discussions");
   const tCollaborate = useTranslations("collaborate");
   const tCommon = useTranslations("common");
+  const tLayers = useTranslations("layers");
   const [discussions, setDiscussions] = useState<Discussion[]>([]);
   const [layerFilter, setLayerFilter] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -35,8 +36,8 @@ export default function DiscussionsPage() {
       : "/api/discussions";
     fetch(url)
       .then((r) => r.json())
-      .then((data) => {
-        setDiscussions(data);
+      .then((json) => {
+        setDiscussions(json.data ?? json);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -121,7 +122,7 @@ export default function DiscussionsPage() {
                       </h2>
                       <div className="flex items-center gap-3 mt-1.5 text-xs text-brown/40 font-sans">
                         <Badge variant="outline" className="gap-1 font-normal text-[10px]">
-                          {getLayerIcon(d.layer)} {getLayerName(d.layer)}
+                          {getLayerByNumber(d.layer)?.icon} {tLayers(`items.${getLayerByNumber(d.layer)?.slug}.title`)}
                         </Badge>
                         <span>{tCommon("by", { name: d.userName || tCommon("anonymous") })}</span>
                         <span className="text-brown/25">

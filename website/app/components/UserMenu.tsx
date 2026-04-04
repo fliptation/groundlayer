@@ -36,6 +36,8 @@ export default function UserMenu() {
     <div className="relative">
       <button
         onClick={() => setMenuOpen(!menuOpen)}
+        aria-expanded={menuOpen}
+        aria-haspopup="menu"
         className="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-cream-dark/60 transition-colors duration-200"
         style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
       >
@@ -54,6 +56,7 @@ export default function UserMenu() {
             onClick={() => setMenuOpen(false)}
           />
           <div
+            role="menu"
             className="absolute right-0 top-full mt-2 w-48 bg-warm-white border border-brown-light/15 rounded-xl shadow-lg z-50 py-2 animate-fade-in"
             style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
           >
@@ -62,6 +65,7 @@ export default function UserMenu() {
             </div>
             <Link
               href="/profile"
+              role="menuitem"
               className="block px-4 py-2.5 text-sm text-brown-dark hover:bg-cream-dark/40 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
@@ -69,6 +73,7 @@ export default function UserMenu() {
             </Link>
             <Link
               href="/projects/new"
+              role="menuitem"
               className="block px-4 py-2.5 text-sm text-brown-dark hover:bg-cream-dark/40 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
@@ -76,6 +81,7 @@ export default function UserMenu() {
             </Link>
             <Link
               href="/ideas/new"
+              role="menuitem"
               className="block px-4 py-2.5 text-sm text-brown-dark hover:bg-cream-dark/40 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
@@ -83,6 +89,7 @@ export default function UserMenu() {
             </Link>
             <div className="border-t border-brown-light/10 mt-1 pt-1">
               <button
+                role="menuitem"
                 onClick={() => {
                   signOut();
                   setMenuOpen(false);

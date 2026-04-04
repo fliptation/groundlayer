@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import LayerFilter from "@/app/components/LayerFilter";
-import { getLayerName, getLayerIcon } from "@/lib/layers";
+import { getLayerByNumber } from "@/lib/layers";
 import { useAuth } from "@/app/components/AuthProvider";
 
 type Project = {
@@ -34,6 +34,7 @@ export default function ProjectsPage() {
   const t = useTranslations("projects");
   const tCollaborate = useTranslations("collaborate");
   const tCommon = useTranslations("common");
+  const tLayers = useTranslations("layers");
   const [projects, setProjects] = useState<Project[]>([]);
   const [layerFilter, setLayerFilter] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -46,7 +47,7 @@ export default function ProjectsPage() {
     fetch(url)
       .then((r) => r.json())
       .then((data) => {
-        setProjects(data);
+        setProjects(data.data ?? data);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -131,7 +132,7 @@ export default function ProjectsPage() {
 
                 <div className="flex flex-wrap items-center gap-3 text-xs text-brown/40 font-sans">
                   <Badge variant="outline" className="gap-1 font-normal">
-                    {getLayerIcon(project.layer)} {getLayerName(project.layer)}
+                    {getLayerByNumber(project.layer)?.icon} {tLayers(`items.${getLayerByNumber(project.layer)?.slug}.title`)}
                   </Badge>
                   {project.location && (
                     <span className="inline-flex items-center gap-1">
