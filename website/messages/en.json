@@ -1,0 +1,651 @@
+{
+  "common": {
+    "brandName": "Ground Layer",
+    "explore": "Explore",
+    "getStarted": "Get Started",
+    "github": "GitHub",
+    "viewOnGitHub": "View on GitHub",
+    "all": "All",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "anonymous": "Anonymous",
+    "by": "by {name}",
+    "websiteLink": "Website →"
+  },
+  "metadata": {
+    "home": {
+      "title": "Ground Layer — A System for a Healthier Planet & People",
+      "description": "An open-source blueprint for reorganizing how we live together. Less control, more unity. Decentralized, transparent, regenerative."
+    },
+    "vision": {
+      "title": "The Vision — Ground Layer",
+      "description": "A world that works for everyone. An open-source design for reorganizing how we live together."
+    },
+    "getStarted": {
+      "title": "Get Started — Ground Layer",
+      "description": "Start where you are. Use what you have. Do what you can. Share what you learn."
+    },
+    "contribute": {
+      "title": "Contribute — Ground Layer",
+      "description": "Ground Layer belongs to everyone who contributes. Here's how to participate."
+    },
+    "collaborate": {
+      "title": "Collaborate — Ground Layer",
+      "description": "Share projects, propose ideas, and discuss the layers with the community."
+    },
+    "layer": {
+      "title": "{title} — Ground Layer",
+      "notFound": "Not Found"
+    }
+  },
+  "header": {
+    "nav": {
+      "vision": "Vision",
+      "layers": "Layers",
+      "examples": "Examples",
+      "collaborate": "Collaborate",
+      "getStarted": "Get Started"
+    },
+    "toggleMenu": "Toggle menu"
+  },
+  "footer": {
+    "tagline": "An open-source blueprint for a healthier planet and people. Less control, more unity. Free for everyone to use, improve, and share.",
+    "exploreHeading": "Explore",
+    "theVision": "The Vision",
+    "theLayers": "The Layers",
+    "contribute": "Contribute",
+    "connectHeading": "Connect",
+    "forkIt": "Fork it. Improve it. Implement it in your community. The blueprint is open.",
+    "license": "Licensed under CC-BY-SA 4.0 — free and open source.",
+    "motto": "For the commons, by the commons."
+  },
+  "userMenu": {
+    "myProfile": "My Profile",
+    "submitProject": "Submit Project",
+    "shareAnIdea": "Share an Idea",
+    "signOut": "Sign Out"
+  },
+  "hero": {
+    "eyebrow": "An open-source blueprint",
+    "heading": "A system for a<br></br><highlight>healthier</highlight> planet<br></br> & people",
+    "subtitle": "Reorganizing how we live together. Decentralized. Transparent. Regenerative.",
+    "description": "Less control and force. More unity in people. Thirteen interconnected layers covering how we grow food, care for health, govern ourselves, exchange value, learn together, power our lives, and protect human rights.",
+    "readTheVision": "Read the Vision",
+    "stats": {
+      "layers": "Layers",
+      "open": "Open",
+      "gatekeepers": "Gatekeepers"
+    }
+  },
+  "home": {
+    "principles": {
+      "decentralize": {
+        "label": "Decentralize",
+        "sub": "Distribute power to the edges"
+      },
+      "transparent": {
+        "label": "Transparent",
+        "sub": "Open to inspection by all"
+      },
+      "regenerative": {
+        "label": "Regenerative",
+        "sub": "Give back more than you take"
+      },
+      "voluntary": {
+        "label": "Voluntary",
+        "sub": "Consent over coercion"
+      }
+    },
+    "frameworkEyebrow": "The Framework",
+    "frameworkHeading": "Thirteen Layers<br></br> of Change",
+    "frameworkDescription": "Each layer addresses a fundamental aspect of how we live. They're deeply interconnected — improving one strengthens them all.",
+    "pullQuote": "\"The blueprint is open. The work begins <emphasis>where you are</emphasis>.\"",
+    "pullQuoteDescription": "No one owns Ground Layer. It belongs to everyone who contributes. Read it, improve it, fork it, implement it in your community.",
+    "startContributing": "Start Contributing",
+    "beginLocally": "Begin Locally"
+  },
+  "layers": {
+    "layerNumber": "Layer {number}",
+    "explore": "Explore",
+    "theProblem": "The Problem",
+    "theAlternative": "The Alternative",
+    "startHere": "Start Here",
+    "alreadyHappening": "Already Happening",
+    "viewAllExamples": "View all examples",
+    "est": "Est. {year}",
+    "items": {
+      "food-and-land": {
+        "title": "Food & Land",
+        "description": "Community land trusts, open-source agriculture, local food networks, and regenerative practices.",
+        "subtitle": "How we grow, share, and steward the earth",
+        "problem": "Industrial agriculture depletes topsoil at 10x the rate it's created. A handful of corporations control the global seed supply. One-third of all food is wasted while nearly a billion people go hungry. Land is treated as a speculative asset.",
+        "solutions": {
+          "0": { "name": "Community Land Trusts", "desc": "Land held in common by the community — not owned by speculators. People can use, build on, and farm the land, but it can't be bought and sold for profit." },
+          "1": { "name": "Open-Source Agriculture", "desc": "Shared seed banks, open soil data, regenerative techniques, and peer-to-peer farmer learning — no patents, no gatekeeping." },
+          "2": { "name": "Local Food Networks", "desc": "CSAs, food hubs, community gardens, urban farms, and free food forests — shortening the distance between grower and eater." },
+          "3": { "name": "Regenerative Practices", "desc": "Building topsoil, increasing biodiversity, capturing carbon in soil, and working with natural cycles instead of against them." }
+        },
+        "actions": {
+          "0": "Learn to grow something — even a windowsill herb garden",
+          "1": "Join or start a community garden",
+          "2": "Buy from local farmers when possible",
+          "3": "Research community land trusts in your area",
+          "4": "Start a seed library at your local library"
+        },
+        "examples": {
+          "0": "Community land trusts operate in hundreds of cities worldwide",
+          "1": "La Via Campesina represents 200 million small farmers globally",
+          "2": "The Open Source Seed Initiative has freed hundreds of seed varieties from patents",
+          "3": "Detroit's urban farming grows millions of pounds of food on formerly vacant lots"
+        }
+      },
+      "health": {
+        "title": "Health",
+        "description": "Prevention first, open medical knowledge, community health circles, and mental health as foundation.",
+        "subtitle": "How we care for bodies, minds, and communities",
+        "problem": "Modern healthcare is sick-care — it waits until people are broken, then sells expensive fixes. The system profits from illness, not health. The real determinants of health (clean air, water, food, community) are ignored.",
+        "solutions": {
+          "0": { "name": "Prevention First", "desc": "Clean air, real food, movement, rest, connection, and purpose — the actual medicine. Invest upstream instead of downstream." },
+          "1": { "name": "Open Medical Knowledge", "desc": "Publicly funded research belongs to the public. Open-access studies, transparent drug pricing, and open-source medical devices." },
+          "2": { "name": "Community Health Circles", "desc": "Small groups meeting regularly to share health knowledge, support each other, and reduce isolation — which is itself a health intervention." },
+          "3": { "name": "Mental Health as Foundation", "desc": "Normalize talking about mental health. Train community members in psychological first aid. Address root causes: inequality, insecurity, isolation." },
+          "4": { "name": "Hygiene & Cooking", "desc": "Basic hygiene and home cooking are the frontline of health. Teach food preparation skills, fermentation, nutrition, and sanitation in every community. Cooking together builds connection and replaces processed food with real nourishment." }
+        },
+        "actions": {
+          "0": "Cook real food. Move your body. Sleep enough.",
+          "1": "Learn to cook three simple, nourishing meals from scratch",
+          "2": "Teach children basic hygiene and food safety",
+          "3": "Start a community cooking circle or shared kitchen",
+          "4": "Check on your neighbors — connection is medicine",
+          "5": "Start a community health or walking group",
+          "6": "Learn basic first aid and health literacy",
+          "7": "Advocate for clean air and water in your area"
+        },
+        "examples": {
+          "0": "Costa Rica has better health outcomes than the US at a fraction of the cost — through prevention",
+          "1": "Community kitchens in Peru and Brazil feed thousands while teaching cooking skills",
+          "2": "Community health workers serve billions worldwide",
+          "3": "Open-source medical devices create affordable alternatives",
+          "4": "Peer support for mental health shows outcomes comparable to professional therapy"
+        }
+      },
+      "governance": {
+        "title": "Governance",
+        "description": "Subsidiarity, liquid democracy, rotating stewardship, and restorative justice.",
+        "subtitle": "How we make decisions together",
+        "problem": "Most governance systems were designed centuries ago. They concentrate decision-making in distant capitals, create professional political classes, and reduce citizen participation to voting every few years. People feel powerless.",
+        "solutions": {
+          "0": { "name": "Subsidiarity", "desc": "Every decision made at the smallest level where it can be made effectively. Your street? Your neighbors decide. Power flows upward by delegation, not downward by command." },
+          "1": { "name": "Liquid Democracy", "desc": "Vote directly on issues you care about. Delegate your vote on others to someone you trust. Revoke delegation any time. All transparent and auditable." },
+          "2": { "name": "Rotating Stewardship", "desc": "Leadership is service, not power. Short term limits, no professional political class, mandatory rest periods between terms." },
+          "3": { "name": "Restorative Justice", "desc": "When harm occurs, focus on healing — not punishment. Those who cause harm face those they've harmed. Together they repair the damage." }
+        },
+        "actions": {
+          "0": "Attend local government meetings",
+          "1": "Learn facilitation and mediation skills",
+          "2": "Start a neighborhood assembly with regular meetings",
+          "3": "Practice consensus decision-making in your groups",
+          "4": "Create participatory budgeting for community funds"
+        },
+        "examples": {
+          "0": "Porto Alegre pioneered participatory budgeting — now used in thousands of cities",
+          "1": "Ireland used citizens' assemblies to resolve deeply divisive issues",
+          "2": "Rojava runs on nested local councils with rotating leadership",
+          "3": "Indigenous governance systems have practiced consensus for millennia"
+        }
+      },
+      "economy": {
+        "title": "Economy",
+        "description": "Commons-based production, local currencies, time banking, and circular economy.",
+        "subtitle": "How we exchange value and share wealth",
+        "problem": "The current economy concentrates wealth, requires infinite growth on a finite planet, treats unpaid care work as worthless, and pays the most essential workers the least. Money is created as debt by private banks.",
+        "solutions": {
+          "0": { "name": "Commons-Based Production", "desc": "Water, energy, knowledge, and basic infrastructure managed as commons. Cooperative ownership. Community wealth building." },
+          "1": { "name": "Local Currencies & Mutual Credit", "desc": "Community-created exchange systems that keep wealth circulating locally. Cooperative banks lending for community benefit." },
+          "2": { "name": "Time Banking", "desc": "Everyone's hour is worth the same. A lawyer's hour equals a gardener's. This values care work, community work, and skills the market ignores." },
+          "3": { "name": "Circular Economy", "desc": "Waste is a design failure. Products designed to be repaired, reused, and recycled. Tool libraries. Local manufacturing. Nutrient cycling." }
+        },
+        "actions": {
+          "0": "Support local businesses and cooperatives",
+          "1": "Join or start a time bank",
+          "2": "Invest locally — credit unions, community funds",
+          "3": "Reduce, repair, reuse before buying new",
+          "4": "Map your local economy — where does money flow and leak?"
+        },
+        "examples": {
+          "0": "Mondragon Corporation: 80+ cooperatives employing 80,000+ people",
+          "1": "Hundreds of local currencies operate worldwide",
+          "2": "Time banking networks exist in 30+ countries",
+          "3": "Amsterdam adopted Doughnut Economics as its development framework"
+        }
+      },
+      "education": {
+        "title": "Education & Culture",
+        "description": "Learning by doing, open knowledge commons, skills that matter, and culture from the ground up.",
+        "subtitle": "How we learn, create, and pass on wisdom",
+        "problem": "Education was designed for the industrial age — to produce obedient workers. It sorts children by age, rewards memorization, and systematically crushes natural curiosity. Culture is increasingly manufactured by a handful of media corporations.",
+        "solutions": {
+          "0": { "name": "Learning by Doing", "desc": "Project-based learning, apprenticeships, intergenerational teaching, self-directed learning, and place-based education rooted in local context." },
+          "1": { "name": "Open Knowledge Commons", "desc": "All human knowledge freely accessible. Open educational resources, community libraries with tools and maker spaces, open-source curricula." },
+          "2": { "name": "Skills That Matter", "desc": "Growing food, building and repairing, emotional intelligence, critical thinking, collaboration, financial literacy, ecological literacy." },
+          "3": { "name": "Culture From the Ground Up", "desc": "Community storytelling, local arts, festivals, language preservation, and media literacy — culture created by communities, not consumed from corporations." }
+        },
+        "actions": {
+          "0": "Teach something you know. Learn something you don't.",
+          "1": "Share your skills freely — tutorials, workshops, mentoring",
+          "2": "Support local artists, musicians, and storytellers",
+          "3": "Start a skill-sharing network or free school",
+          "4": "Create a community maker space or workshop"
+        },
+        "examples": {
+          "0": "Finland's education system focuses on collaboration, play, and minimal testing",
+          "1": "Wikipedia provides free knowledge to billions",
+          "2": "Khan Academy offers free world-class education",
+          "3": "The maker movement has created thousands of community fab labs"
+        }
+      },
+      "energy": {
+        "title": "Energy & Environment",
+        "description": "Distributed renewables, circular material flows, rights of nature, and regenerative land management.",
+        "subtitle": "How we power our lives and protect our home",
+        "problem": "Our civilization runs on ancient sunlight being burned in decades, causing climate chaos. Energy is centralized in massive corporations. Those who bear the worst impacts have the least power. We treat nature as a warehouse.",
+        "solutions": {
+          "0": { "name": "Distributed Renewable Energy", "desc": "Community solar and wind, microgrids, energy cooperatives, rooftop renewables, and local battery storage. Every community produces its own clean energy." },
+          "1": { "name": "Circular Material Flows", "desc": "Design for disassembly, local repair economies, material libraries, industrial symbiosis, and composting at scale. Waste from one process feeds another." },
+          "2": { "name": "Rights of Nature", "desc": "Rivers, forests, and ecosystems have legal standing. Communities can sue on behalf of nature. Indigenous land management practices are recognized." },
+          "3": { "name": "Regenerative Land Management", "desc": "Reforestation, watershed restoration, soil carbon sequestration, pollinator corridors, and urban greening. Actively healing instead of just sustaining." }
+        },
+        "actions": {
+          "0": "Reduce energy waste — insulation, efficiency, mindful use",
+          "1": "Support community energy projects",
+          "2": "Repair before replacing. Share before buying.",
+          "3": "Plant trees and create pollinator gardens",
+          "4": "Research community solar or wind options"
+        },
+        "examples": {
+          "0": "Germany's Energiewende shifted toward community-owned renewable energy",
+          "1": "Ecuador and Bolivia have constitutional rights of nature",
+          "2": "Repair Cafes have spread to 2,500+ locations in 40 countries",
+          "3": "Denmark's Samso island produces more renewable energy than it consumes"
+        }
+      },
+      "housing": {
+        "title": "Housing & Shelter",
+        "description": "Co-housing, community land trusts for housing, open-source architecture, and dignified shelter for all.",
+        "subtitle": "How we create dignified, affordable places to live",
+        "problem": "Housing has become a speculative asset class. In cities worldwide, homes sit empty as investments while people sleep on streets. Construction is dominated by a few corporations using proprietary methods. Rents consume half of many people's income. The connection between shelter and community has been severed.",
+        "solutions": {
+          "0": { "name": "Community Land Trusts for Housing", "desc": "Land is held in trust so homes remain permanently affordable. Residents own their buildings but not the land beneath, preventing speculation and keeping housing within reach of future generations." },
+          "1": { "name": "Co-Housing & Cooperative Living", "desc": "Intentional communities where residents share common spaces — kitchens, workshops, gardens — while maintaining private units. Decisions made collectively. Costs shared. Isolation reduced." },
+          "2": { "name": "Open-Source Architecture", "desc": "Building plans, material specifications, and construction techniques shared freely. WikiHouse, OpenStructures, and earthship designs anyone can adapt to local conditions and materials." },
+          "3": { "name": "Dignified Shelter for All", "desc": "Housing-first approaches to homelessness. Tiny house villages, adaptive reuse of empty buildings, and community-built emergency shelter. No one left outside." }
+        },
+        "actions": {
+          "0": "Learn about housing cooperatives in your area",
+          "1": "Support community land trust initiatives",
+          "2": "Explore open-source building plans for local conditions",
+          "3": "Advocate for housing-first policies in your community",
+          "4": "Join or start a tool-sharing library for home repair"
+        },
+        "examples": {
+          "0": "Vienna's social housing model houses 60% of the city's population affordably",
+          "1": "Uruguay's FUCVAM cooperative movement has housed 30,000+ families",
+          "2": "WikiHouse provides open-source housing designs downloadable by anyone",
+          "3": "Finland virtually eliminated homelessness through housing-first policies"
+        }
+      },
+      "technology": {
+        "title": "Technology & Infrastructure",
+        "description": "Open-source software, mesh networks, community broadband, data sovereignty, and digital commons.",
+        "subtitle": "How we build and share the tools we depend on",
+        "problem": "A handful of corporations control the digital infrastructure of modern life — search, communication, commerce, identity. Technology that could liberate is used to surveil and extract. Critical infrastructure depends on proprietary systems. Communities have no sovereignty over their own data.",
+        "solutions": {
+          "0": { "name": "Open-Source Everything", "desc": "Software, hardware, and protocols built in the open. Community-governed, auditable, forkable. From operating systems to farm equipment, no critical tool should be locked behind a corporate gate." },
+          "1": { "name": "Community Networks", "desc": "Mesh networks, community broadband, and local ISPs owned and operated by the people who use them. Internet access as a commons, not a product." },
+          "2": { "name": "Data Sovereignty", "desc": "Communities and individuals own their data. Local data cooperatives, self-hosted services, and encryption by default. Your data stays yours." },
+          "3": { "name": "Appropriate Technology", "desc": "Technology chosen for context — not every problem needs AI or blockchain. Low-tech, resilient, repairable solutions valued alongside high-tech ones." }
+        },
+        "actions": {
+          "0": "Switch to open-source tools where you can",
+          "1": "Support community broadband initiatives",
+          "2": "Host your own data when possible",
+          "3": "Teach basic digital literacy in your community",
+          "4": "Contribute to open-source projects — code, docs, or funding"
+        },
+        "examples": {
+          "0": "Linux runs the majority of the world's servers and smartphones",
+          "1": "Guifi.net in Catalonia is the world's largest community mesh network with 35,000+ nodes",
+          "2": "Signal provides encrypted communication to millions without ads or tracking",
+          "3": "The Right to Repair movement has won legislation in multiple countries"
+        }
+      },
+      "water": {
+        "title": "Water & Sanitation",
+        "description": "Community water stewardship, watershed protection, open-source water purification, and sanitation as a right.",
+        "subtitle": "How we protect and share our most essential resource",
+        "problem": "2 billion people lack safe drinking water. Water is increasingly privatized and commodified. Industrial agriculture and industry pollute aquifers and rivers. Climate change intensifies droughts and floods. Meanwhile, wealthy nations waste water at staggering rates.",
+        "solutions": {
+          "0": { "name": "Community Water Stewardship", "desc": "Water managed as a commons by the communities that depend on it. Local water boards, transparent monitoring, and democratic control over allocation and quality." },
+          "1": { "name": "Watershed Protection", "desc": "Protecting entire watersheds — from mountain springs to river deltas. Reforestation, wetland restoration, and riparian buffers that filter and slow water naturally." },
+          "2": { "name": "Open-Source Water Systems", "desc": "Low-cost, locally buildable water purification, rainwater harvesting, and greywater recycling systems. Plans shared freely, adapted to local conditions." },
+          "3": { "name": "Sanitation as a Right", "desc": "Composting toilets, constructed wetlands, decentralized treatment systems, and community-maintained infrastructure. Turning waste into resources while preserving dignity." }
+        },
+        "actions": {
+          "0": "Learn where your water comes from and how it's treated",
+          "1": "Reduce water waste — fix leaks, harvest rainwater",
+          "2": "Protect local waterways — join a river cleanup",
+          "3": "Support water as a public trust, not a commodity",
+          "4": "Install rainwater collection if local laws permit"
+        },
+        "examples": {
+          "0": "Cochabamba's water war reversed privatization and restored community control",
+          "1": "Singapore recycles 40% of its wastewater back into drinking water",
+          "2": "Biosand filters provide safe water for millions in developing countries",
+          "3": "Indigenous water protectors have blocked pipelines threatening watersheds worldwide"
+        }
+      },
+      "transportation": {
+        "title": "Transportation & Mobility",
+        "description": "Walkable communities, transit cooperatives, shared mobility, and human-scaled infrastructure.",
+        "subtitle": "How we move people and goods without destroying what we love",
+        "problem": "Cities were redesigned around cars, not people. Transportation is the largest source of emissions in many countries. Car dependence isolates the elderly, disabled, and poor. Infrastructure costs bankrupt municipalities. We spend hours daily in traffic, alone.",
+        "solutions": {
+          "0": { "name": "Walkable Communities", "desc": "Mixed-use neighborhoods where daily needs are within walking distance. Human-scaled streets, public spaces, and buildings designed for people, not parking." },
+          "1": { "name": "Transit Cooperatives", "desc": "Community-owned public transit — buses, shuttles, bike-shares, and ride-shares governed by riders and workers, not distant corporations." },
+          "2": { "name": "Shared Mobility", "desc": "Car-sharing, tool libraries for vehicles, cargo bike networks, and community vehicle pools. Access over ownership. One shared car replaces 10+ private ones." },
+          "3": { "name": "Human-Scaled Infrastructure", "desc": "Protected bike lanes, pedestrian zones, traffic calming, and accessible design. Infrastructure that invites movement, not just motoring." }
+        },
+        "actions": {
+          "0": "Walk or bike for trips under 2 miles",
+          "1": "Advocate for bike lanes and pedestrian zones in your area",
+          "2": "Join or start a car-sharing cooperative",
+          "3": "Support public transit — ride it, fund it, improve it",
+          "4": "Push for mixed-use zoning in your neighborhood"
+        },
+        "examples": {
+          "0": "Amsterdam transformed from car-centric to cycling paradise through citizen activism",
+          "1": "Bogotá's TransMilenio and Ciclovía show how cities can prioritize people",
+          "2": "Car-sharing cooperatives in Switzerland and Germany serve hundreds of thousands",
+          "3": "Barcelona's superblocks reclaim streets for people, reducing pollution and noise"
+        }
+      },
+      "communication": {
+        "title": "Communication & Media",
+        "description": "Community media, decentralized platforms, information commons, and media literacy for all.",
+        "subtitle": "How we share information and tell our stories",
+        "problem": "A few corporations control most of the world's information flow. Algorithms optimize for engagement, not truth. Local journalism is collapsing. Misinformation spreads faster than facts. Communities have lost the ability to tell their own stories.",
+        "solutions": {
+          "0": { "name": "Community Media", "desc": "Locally owned newspapers, radio stations, podcasts, and newsletters. Journalism accountable to the community it serves, funded by readers, not advertisers." },
+          "1": { "name": "Decentralized Platforms", "desc": "Federated social networks, community-run forums, and open protocols that no single entity controls. Mastodon, Matrix, and the Fediverse as alternatives to corporate platforms." },
+          "2": { "name": "Information Commons", "desc": "Publicly funded research freely available. Community archives preserving local history. Open data portals for civic information. Knowledge as a shared resource." },
+          "3": { "name": "Media Literacy for All", "desc": "Critical thinking skills taught at every age. Understanding how algorithms work, how to verify information, and how to create media — not just consume it." }
+        },
+        "actions": {
+          "0": "Support local journalism — subscribe, donate, contribute",
+          "1": "Move conversations to community-owned platforms",
+          "2": "Teach media literacy skills in your community",
+          "3": "Start a community newsletter or podcast",
+          "4": "Share knowledge openly — blog, teach, document"
+        },
+        "examples": {
+          "0": "The Fediverse connects millions through decentralized, community-run social networks",
+          "1": "Community radio reaches 500+ million people worldwide",
+          "2": "Wikipedia remains the world's largest open knowledge project",
+          "3": "Taiwan's digital democracy tools combat misinformation through civic participation"
+        }
+      },
+      "safety": {
+        "title": "Safety & Conflict Resolution",
+        "description": "Community safety networks, mutual aid, restorative practices, and disaster resilience.",
+        "subtitle": "How we protect each other and resolve harm",
+        "problem": "Safety is outsourced to punitive systems that often create more harm than they prevent. Police and prisons disproportionately affect marginalized communities. Conflict is treated as something to suppress, not resolve. Communities lack the tools to protect themselves or recover from disaster.",
+        "solutions": {
+          "0": { "name": "Community Safety Networks", "desc": "Trained community members responding to mental health crises, domestic disputes, and neighborhood concerns. De-escalation, mediation, and care — not just force." },
+          "1": { "name": "Restorative & Transformative Justice", "desc": "When harm occurs, bring together those who caused harm, those who were harmed, and the community. Understand root causes. Repair damage. Transform conditions that produced the harm." },
+          "2": { "name": "Mutual Aid & Disaster Resilience", "desc": "Neighbors organized to help each other in emergencies — storms, fires, pandemics, economic crises. Preparedness plans, shared resources, and communication networks." },
+          "3": { "name": "Root Cause Prevention", "desc": "Address the conditions that create harm: poverty, isolation, trauma, inequality. Safe communities aren't policed communities — they're connected, supported ones." }
+        },
+        "actions": {
+          "0": "Get trained in conflict mediation and de-escalation",
+          "1": "Build relationships with your neighbors — know who needs help",
+          "2": "Create a neighborhood emergency preparedness plan",
+          "3": "Support restorative justice programs in your area",
+          "4": "Start a mutual aid network for your community"
+        },
+        "examples": {
+          "0": "CAHOOTS in Eugene, Oregon handles thousands of crisis calls without police",
+          "1": "Rwanda's Gacaca courts used community-based restorative justice after genocide",
+          "2": "Mutual aid networks mobilized millions during COVID-19",
+          "3": "Cure Violence treats violence as a public health issue and has reduced shootings by up to 70%"
+        }
+      },
+      "human-rights": {
+        "title": "Human Rights",
+        "description": "Citizen documentation, open data, rights education, and decentralized accountability.",
+        "subtitle": "How we protect dignity and hold power accountable",
+        "problem": "Human rights violations happen every day, yet most go undocumented and unaddressed. The systems meant to protect people are slow, centralized, and inaccessible. Major organizations do critical work but can only cover a fraction of what happens. Authoritarian regimes suppress documentation, journalists are imprisoned, witnesses are silenced, and evidence disappears.",
+        "solutions": {
+          "0": { "name": "Citizen Documentation Networks", "desc": "Anyone, anywhere, can document what they see — GPS-tagged incident reporting, metadata verification, and censorship-resistant distribution so evidence cannot be destroyed." },
+          "1": { "name": "Open Data Aggregation", "desc": "Real-time collection from GDELT, UN OHCHR, ACLED, and citizen reports into a single, accessible platform. No paywalls, no gatekeeping — data belongs to humanity." },
+          "2": { "name": "Community Rights Education", "desc": "The 30 Articles of the Universal Declaration of Human Rights, accessible to everyone in every language — not abstract law, but living rights people can claim and defend." },
+          "3": { "name": "Institutional Amplification", "desc": "We don't compete with Human Rights Watch or Amnesty — we feed them. Citizen data amplifies expert investigation. Expert credibility validates citizen reports." }
+        },
+        "actions": {
+          "0": "Learn the 30 Articles of the Universal Declaration of Human Rights",
+          "1": "Document violations you witness — safely and with evidence",
+          "2": "Establish a local human rights monitoring group",
+          "3": "Connect with regional and international human rights networks",
+          "4": "Support and protect journalists and human rights defenders"
+        },
+        "examples": {
+          "0": "GDELT Project monitors global events in real-time across 100+ languages",
+          "1": "Ushahidi pioneered crisis-mapping and citizen reporting across dozens of countries",
+          "2": "Witness.org trains people globally to use video for human rights documentation",
+          "3": "The Syrian Archive preserves digital evidence of human rights violations for accountability"
+        }
+      }
+    }
+  },
+  "vision": {
+    "eyebrow": "The Vision",
+    "heading": "A world that works<br></br>for <highlight>everyone</highlight>",
+    "introParagraph": "We live in a time of extraordinary capability. We can grow enough food for everyone. We can generate clean energy. We can share knowledge instantly across the planet. Yet billions struggle, ecosystems collapse, and communities fracture. The problem isn't scarcity. It's design.",
+    "differentDesignHeading": "A Different Design",
+    "differentDesignParagraph1": "Our current systems were built around extraction, control, and competition. They concentrate power in the hands of a few and leave the rest fighting over what's left. They treat nature as a resource to exploit and people as consumers to manage.",
+    "differentDesignParagraph2": "Ground Layer is a different design. It's a living blueprint for reorganizing how we live together — starting from the ground up. It covers thirteen interconnected layers of human life: from food and health to governance, economy, education, energy, and human rights.",
+    "coreShiftHeading": "The Core Shift",
+    "coreShifts": {
+      "0": { "from": "Centralized control", "to": "Distributed stewardship" },
+      "1": { "from": "Extraction", "to": "Regeneration" },
+      "2": { "from": "Competition", "to": "Cooperation" },
+      "3": { "from": "Artificial scarcity", "to": "Shared abundance" },
+      "4": { "from": "Top-down mandates", "to": "Bottom-up coordination" },
+      "5": { "from": "Profit as purpose", "to": "Wellbeing as purpose" }
+    },
+    "howDifferentHeading": "How It's Different",
+    "howDifferentIntro": "This isn't a political party, a corporation, or a top-down plan. It's an open system:",
+    "differences": {
+      "0": { "bold": "Anyone can read it, improve it, and use it.", "rest": "The entire design is public and forkable." },
+      "1": { "bold": "No one controls it.", "rest": "There's no CEO, no board, no headquarters." },
+      "2": { "bold": "It's modular.", "rest": "You can implement one layer without waiting for permission." },
+      "3": { "bold": "It evolves.", "rest": "As people test ideas and share results, the design gets better." }
+    },
+    "successHeading": "What Success Looks Like",
+    "successIntro": "Not a utopia. Not perfection. Just a world where:",
+    "successItems": {
+      "0": "No one goes hungry while food rots in warehouses",
+      "1": "Health isn't a luxury",
+      "2": "People have a real voice in the decisions that affect them",
+      "3": "The economy serves life, not the other way around",
+      "4": "Knowledge flows freely",
+      "5": "The planet heals"
+    },
+    "blockquote": "This isn't idealism. It's engineering. We're designing systems that make these outcomes the natural result, not the exception.",
+    "exploreLayers": "Explore the Layers"
+  },
+  "getStarted": {
+    "eyebrow": "Begin Here",
+    "heading": "Get Started",
+    "intro": "You don't need permission. You can start right now, right where you are. Every layer of Ground Layer can begin at the scale of one person, one household, one neighborhood.",
+    "steps": {
+      "0": { "num": "01", "title": "Learn", "text": "Pick one layer that resonates with you. Read about it. Find examples of people who've already done it. You'll discover that almost nothing here is new — it's all been tried and proven somewhere." },
+      "1": { "num": "02", "title": "Connect", "text": "Find the people near you who care about the same things. Look in community gardens, cooperatives, mutual aid groups, maker spaces, and local organizations. They're already there — you just haven't met them yet." },
+      "2": { "num": "03", "title": "Map", "text": "Understand your local context. What are the biggest challenges here? What resources aren't being fully used? Who's already doing good work? What are the existing strengths of this community?" },
+      "3": { "num": "04", "title": "Act", "text": "Start small. Pick one concrete thing you can do this week:" },
+      "4": { "num": "05", "title": "Share", "text": "Document what you do. Share what works and what doesn't. This is how the system learns and evolves. Contribute your experience back to this project, write about it, talk to your neighbors." }
+    },
+    "quickActions": {
+      "0": { "layer": "Food & Land", "icon": "🌱", "action": "Plant something. Visit a farmers market. Start composting." },
+      "1": { "layer": "Health", "icon": "💚", "action": "Start a walking group. Cook a meal with neighbors." },
+      "2": { "layer": "Governance", "icon": "🤝", "action": "Attend a local council meeting. Start a neighborhood group chat." },
+      "3": { "layer": "Economy", "icon": "🌀", "action": "Join a time bank. Shop at a co-op. Lend a tool." },
+      "4": { "layer": "Education", "icon": "📖", "action": "Teach a skill to someone. Host a book discussion." },
+      "5": { "layer": "Energy", "icon": "☀️", "action": "Audit your energy use. Research community solar options." }
+    },
+    "commonConcernsHeading": "Common Concerns",
+    "concerns": {
+      "0": { "q": "This is too idealistic", "a": "Every system that exists today was once considered impossible. Public libraries, the internet, weekends — all dismissed as utopian before becoming normal." },
+      "1": { "q": "I'm just one person", "a": "Every movement starts with individuals. Your job isn't to change the world alone. It's to change your corner of it and connect with others doing the same." },
+      "2": { "q": "The system is too powerful", "a": "You don't have to fight the old system. Build the new one. When the new way works better, people naturally shift toward it." },
+      "3": { "q": "I don't have the skills", "a": "Can you cook? Garden? Listen? Organize? Fix things? Teach? Care for someone? These are the skills that build commons." }
+    },
+    "ctaHeading": "Start where you are. Use what you have.<br></br>Do what you can. Share what you learn.",
+    "contributeToProject": "Contribute to the Project",
+    "exploreLayers": "Explore the Layers"
+  },
+  "contribute": {
+    "eyebrow": "Join Us",
+    "heading": "Contribute",
+    "intro": "Ground Layer belongs to everyone who contributes. There's no gatekeeping, no application process. If you want to help, you're in.",
+    "githubIntro": "The project lives on <github>GitHub</github>. Contribute through pull requests, issues, discussions, or by implementing ideas in your community.",
+    "ways": {
+      "0": {
+        "title": "Improve the Content",
+        "icon": "✏️",
+        "desc": "Found something unclear, outdated, or missing? Submit a pull request or open an issue on GitHub. Every improvement helps.",
+        "examples": { "0": "Fix typos or unclear language", "1": "Add real-world examples and case studies", "2": "Update information with new research or data", "3": "Suggest new sections or topics" }
+      },
+      "1": {
+        "title": "Share Local Examples",
+        "icon": "🌍",
+        "desc": "Are people in your community already implementing these ideas? Document their work so others can learn from it.",
+        "examples": { "0": "Write up a local cooperative or land trust", "1": "Document a community energy project", "2": "Share how a local food network was started", "3": "Describe your community's governance experiments" }
+      },
+      "2": {
+        "title": "Translate",
+        "icon": "💬",
+        "desc": "Help make Ground Layer accessible to people in every language. The ideas are universal — the words should be too.",
+        "examples": { "0": "Translate docs into your language", "1": "Review existing translations", "2": "Adapt content for your cultural context" }
+      },
+      "3": {
+        "title": "Build Tools",
+        "icon": "🛠️",
+        "desc": "The website, the docs, and the tools around them can always be improved. If you're a developer, designer, or creator, there's work to do.",
+        "examples": { "0": "Improve the website design and accessibility", "1": "Build interactive tools (mapping, visualization)", "2": "Create templates for local implementation", "3": "Develop educational materials" }
+      },
+      "4": {
+        "title": "Implement Locally",
+        "icon": "🏘️",
+        "desc": "The most important contribution is action. Take these ideas and put them into practice where you live. Then share what you learn.",
+        "examples": { "0": "Start a community garden or food co-op", "1": "Organize a neighborhood assembly", "2": "Launch a time bank or local currency", "3": "Create a community energy cooperative" }
+      },
+      "5": {
+        "title": "Spread the Word",
+        "icon": "📣",
+        "desc": "Share Ground Layer with people who might resonate with it. The more people know about it, the faster it grows.",
+        "examples": { "0": "Share with friends, family, and communities", "1": "Present at local meetups or events", "2": "Write about it on your blog or social media", "3": "Connect it to existing movements you're part of" }
+      }
+    },
+    "guidelinesHeading": "Guidelines",
+    "guidelines": {
+      "0": { "bold": "Be respectful.", "rest": "We welcome all perspectives. Disagree with ideas, not people." },
+      "1": { "bold": "Be practical.", "rest": "Prioritize real-world examples over theory. If something works, share how." },
+      "2": { "bold": "Be clear.", "rest": "Write for a global audience. Avoid jargon. Use simple language." },
+      "3": { "bold": "Be constructive.", "rest": "If you see a problem, suggest a solution." },
+      "4": { "bold": "Be inclusive.", "rest": "These ideas need to work for everyone — not just the privileged few." }
+    }
+  },
+  "collaborate": {
+    "eyebrow": "Community",
+    "heading": "Collaborate",
+    "intro": "Ground Layer grows through collective action. Share what you're building, propose ideas, and join the conversation.",
+    "subIntro": "Every contribution matters — from a local garden project to a systemic governance proposal. This is where the community comes together.",
+    "sections": {
+      "projects": {
+        "title": "Projects",
+        "description": "Real-world initiatives putting the blueprint into practice. Share yours or discover what others are building.",
+        "stats": "Projects & Initiatives"
+      },
+      "ideas": {
+        "title": "Ideas",
+        "description": "Proposals, questions, and resources. Vote on what resonates. Propose what's missing.",
+        "stats": "Proposals & Votes"
+      },
+      "discussions": {
+        "title": "Discussions",
+        "description": "Open conversations about each layer. Ask questions, share experiences, explore together.",
+        "stats": "Threads & Replies"
+      }
+    },
+    "newHere": "New here?",
+    "newHereDescription": "Sign in to submit projects, vote on ideas, and join discussions. Reading is always open to everyone."
+  },
+  "discussions": {
+    "breadcrumb": "Discussions",
+    "heading": "Discussions",
+    "description": "Open conversations about each layer. Ask, share, explore.",
+    "newDiscussion": "New Discussion",
+    "noDiscussions": "No discussions yet",
+    "startFirst": "Start the first conversation!",
+    "signInToStart": "Sign in to start a discussion."
+  },
+  "ideas": {
+    "breadcrumb": "Ideas",
+    "heading": "Ideas",
+    "description": "Proposals, questions, and resources. Vote on what resonates.",
+    "newIdea": "New Idea",
+    "noIdeas": "No ideas yet",
+    "beFirst": "Be the first to share an idea!",
+    "signInToSubmit": "Sign in to submit an idea.",
+    "signInToVote": "Sign in to vote",
+    "vote": "Vote",
+    "removeVote": "Remove vote"
+  },
+  "projects": {
+    "breadcrumb": "Projects",
+    "heading": "Projects",
+    "description": "Real-world initiatives putting the blueprint into practice.",
+    "newProject": "New Project",
+    "noProjects": "No projects yet",
+    "beFirst": "Be the first to share a project!",
+    "signInToSubmit": "Sign in to submit a project."
+  },
+  "auth": {
+    "signIn": {
+      "heading": "Welcome Back",
+      "subtitle": "Sign in to contribute to Ground Layer.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Your password",
+      "submitButton": "Sign In",
+      "submitting": "Signing in...",
+      "defaultError": "Invalid email or password",
+      "noAccount": "Don't have an account?"
+    },
+    "signUp": {
+      "heading": "Join Ground Layer",
+      "subtitle": "Create an account to contribute and collaborate.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "At least 8 characters",
+      "submitButton": "Sign Up",
+      "submitting": "Creating account...",
+      "defaultError": "Could not create account",
+      "hasAccount": "Already have an account?"
+    }
+  }
+}
