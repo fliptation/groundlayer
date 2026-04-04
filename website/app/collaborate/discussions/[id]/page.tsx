@@ -48,13 +48,15 @@ export default function DiscussionDetailPage({
     setLoading(true);
     try {
       const [discRes, repliesRes] = await Promise.all([
-        fetch(`/api/discussions?layer=`),
+        fetch(`/api/discussions/${id}`),
         fetch(`/api/discussions/${id}/replies`),
       ]);
-      const discussions = await discRes.json();
-      const disc = discussions.find((d: Discussion) => d.id === parseInt(id));
-      setDiscussion(disc || null);
-      setReplies(await repliesRes.json());
+      if (discRes.ok) {
+        setDiscussion(await discRes.json());
+      }
+      if (repliesRes.ok) {
+        setReplies(await repliesRes.json());
+      }
     } catch {
       // ignore
     }
