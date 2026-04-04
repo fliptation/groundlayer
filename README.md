@@ -2,7 +2,7 @@
 
 **An open-source blueprint for a healthier planet and people.**
 
-Less control and force. More unity in people. Thirteen interconnected layers covering how we grow food, care for health, govern ourselves, exchange value, learn together, power our lives, shelter each other, build tools, protect water, move freely, share stories, and keep each other safe.
+Less control and force. More unity in people. Thirteen interconnected layers covering how we grow food, care for health, govern ourselves, exchange value, learn together, power our lives, shelter each other, build tools, protect water, move freely, share stories, keep each other safe, and defend human rights.
 
 ## The Thirteen Layers
 
