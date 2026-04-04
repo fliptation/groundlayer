@@ -1014,6 +1014,894 @@ export const EXAMPLES: Example[] = [
     yearFounded: 1995,
     layer: 13,
   },
+
+  // ── Additional examples ───────────────────────────────────────────
+
+  // Layer 1: Food & Land (additional)
+  {
+    name: "MASIPAG",
+    location: "Philippines",
+    description:
+      "A farmer-led network promoting biodiversity-based agriculture. Farmer-breeders have collectively produced over 1,385 rice varieties through participatory breeding across 35,000+ farmers.",
+    websiteUrl: "https://masipag.org",
+    tags: ["food-sovereignty", "farmer-led-breeding"],
+    yearFounded: 1986,
+    layer: 1,
+  },
+  {
+    name: "Navdanya",
+    location: "Dehradun, India",
+    description:
+      "A network of seed keepers and organic producers across 16 Indian states, conserving heritage seeds through 150+ community seed banks and training farmers in seed sovereignty and agroecology.",
+    websiteUrl: "https://navdanya.org",
+    tags: ["seed-saving", "community-seed-banks", "organic-farming"],
+    yearFounded: 1991,
+    layer: 1,
+  },
+  {
+    name: "Alliance for Food Sovereignty in Africa",
+    location: "Kampala, Uganda (50 African countries)",
+    description:
+      "A broad alliance of 48 civil society networks across 50 African countries promoting food sovereignty, agroecology, and smallholder farmer rights against industrial agriculture.",
+    websiteUrl: "https://afsafrica.org",
+    tags: ["food-sovereignty", "agroecology"],
+    yearFounded: 2008,
+    layer: 1,
+  },
+  {
+    name: "Red de Guardianes de Semillas",
+    location: "Quito, Ecuador",
+    description:
+      "A network of ~100 families rescuing and exchanging native seeds in danger of disappearing. Expanded to encompass permaculture, natural building, and solidarity economics.",
+    websiteUrl: "https://redsemillas.org",
+    tags: ["seed-sovereignty", "permaculture", "food-sovereignty"],
+    yearFounded: 2002,
+    layer: 1,
+  },
+  {
+    name: "Access Agriculture",
+    location: "Nairobi, Kenya (global)",
+    description:
+      "Produces free farmer training videos in 75+ local languages, enabling South-South knowledge exchange among smallholder farmers. ~200 videos on agroecological techniques.",
+    websiteUrl: "https://www.accessagriculture.org",
+    tags: ["farmer-training", "open-knowledge"],
+    yearFounded: 2012,
+    layer: 1,
+  },
+  {
+    name: "GRAIN",
+    location: "Barcelona, Spain (global)",
+    description:
+      "Supports small farmers and social movements fighting corporate consolidation of seed and land. Publishes critical research on land grabbing and seed laws affecting the Global South.",
+    websiteUrl: "https://grain.org",
+    tags: ["food-sovereignty", "land-rights"],
+    yearFounded: 1990,
+    layer: 1,
+  },
+  {
+    name: "Aranya Agricultural Alternatives",
+    location: "Hyderabad, India",
+    description:
+      "Has trained over 250,000 farmers in permaculture and sustainable agriculture across Telangana and Andhra Pradesh, focusing on watershed management, soil regeneration, and tree-based farming.",
+    websiteUrl: "https://permacultureindia.org",
+    tags: ["permaculture", "regenerative-agriculture", "farmer-training"],
+    yearFounded: 1999,
+    layer: 1,
+  },
+
+  // Layer 2: Health (additional)
+  {
+    name: "Medic (Community Health Toolkit)",
+    location: "Nairobi, Kenya / San Francisco, USA",
+    description:
+      "Steward of the open-source Community Health Toolkit deployed across 15 countries, equipping 40,000+ community health workers with offline-first mobile apps powering 85 million caring activities.",
+    websiteUrl: "https://medic.org",
+    tags: ["open-source-medical", "community-health"],
+    yearFounded: 2010,
+    layer: 2,
+  },
+  {
+    name: "Dimagi (CommCare)",
+    location: "Cambridge, USA / Cape Town / New Delhi",
+    description:
+      "Builds CommCare, the world's most widely deployed open-source mobile platform for frontline health workers — used by 700,000+ workers in 80 countries, shown to decrease maternal mortality by 18%.",
+    websiteUrl: "https://dimagi.com",
+    tags: ["open-source-medical", "community-health", "prevention-first"],
+    yearFounded: 2002,
+    layer: 2,
+  },
+  {
+    name: "Bahmni",
+    location: "India (global deployments)",
+    description:
+      "A free, open-source hospital information system for low-resource environments. Used by 500+ hospitals across 50 countries, recognized as a UN Digital Public Good.",
+    websiteUrl: "https://www.bahmni.org",
+    tags: ["open-source-medical", "open-medical-knowledge"],
+    yearFounded: 2012,
+    layer: 2,
+  },
+  {
+    name: "Project ECHO",
+    location: "Albuquerque, New Mexico, USA (global)",
+    description:
+      "Connects specialist physicians with primary care providers in underserved areas via video teleconference. 412 hubs in 41 countries with learners from 160+ nations democratizing medical expertise.",
+    websiteUrl: "https://projectecho.unm.edu",
+    tags: ["open-medical-knowledge", "prevention-first"],
+    yearFounded: 2003,
+    layer: 2,
+  },
+  {
+    name: "Last Mile Health",
+    location: "Monrovia, Liberia / Boston, USA",
+    description:
+      "Partners with governments to design national community health worker programs bringing preventive care to the most remote communities. Co-designed Liberia's first national CHW program.",
+    websiteUrl: "https://lastmilehealth.org",
+    tags: ["community-health", "prevention-first"],
+    yearFounded: 2007,
+    layer: 2,
+  },
+  {
+    name: "Intelehealth",
+    location: "Bangalore, India",
+    description:
+      "An open-source telemedicine platform enabling governments and NGOs to deliver healthcare where there are no doctors. Community health workers conduct guided assessments and connect patients remotely.",
+    websiteUrl: "https://intelehealth.org",
+    tags: ["open-source-medical", "prevention-first"],
+    yearFounded: 2016,
+    layer: 2,
+  },
+  {
+    name: "Ember Mental Health",
+    location: "London, UK (global)",
+    description:
+      "Identifies and funds promising community-based mental health initiatives in low- and middle-income countries. 2025 cohort spans 12 countries championing locally led approaches.",
+    websiteUrl: "https://embermentalhealth.org",
+    tags: ["mental-health", "community-health"],
+    yearFounded: 2019,
+    layer: 2,
+  },
+
+  // Layer 3: Governance (additional)
+  {
+    name: "People Powered",
+    location: "Brooklyn, New York, USA (global)",
+    description:
+      "Global hub for participatory democracy supporting governments building participatory budgeting, policy-making, planning, and citizens' assemblies across dozens of countries.",
+    websiteUrl: "https://www.peoplepowered.org",
+    tags: ["participatory-budgeting", "citizens-assembly"],
+    yearFounded: 2020,
+    layer: 3,
+  },
+  {
+    name: "Democracia en Red",
+    location: "Buenos Aires, Argentina",
+    description:
+      "Latin American civic tech NGO building tools like DemocracyOS enabling citizens to vote on, track, and debate legislation. Fosters inclusive public decision-making through open-source platforms.",
+    websiteUrl: "https://democraciaenred.org",
+    tags: ["liquid-democracy", "participatory-budgeting"],
+    yearFounded: 2012,
+    layer: 3,
+  },
+  {
+    name: "G1000",
+    location: "Brussels, Belgium",
+    description:
+      "Emerged during Belgium's 2011 political crisis by convening 1,000 randomly selected citizens for deliberation. Now a permanent nonprofit supporting citizens' assemblies at all levels across Belgium.",
+    websiteUrl: "https://www.g1000.org",
+    tags: ["citizens-assembly"],
+    yearFounded: 2011,
+    layer: 3,
+  },
+  {
+    name: "Sortition Foundation",
+    location: "United Kingdom",
+    description:
+      "Organizes democratic lotteries for citizens' assemblies. Delivered the UK Climate Assembly, COVID-19 Public Advisory Group, and dozens of regional assemblies on diverse policy topics.",
+    websiteUrl: "https://www.sortitionfoundation.org",
+    tags: ["citizens-assembly"],
+    yearFounded: 2017,
+    layer: 3,
+  },
+  {
+    name: "Loomio Cooperative",
+    location: "Wellington, New Zealand",
+    description:
+      "A worker-owned cooperative building open-source decision-making software for collaborative, consensus-focused group governance. Used by cooperatives, organizations, and governments worldwide.",
+    websiteUrl: "https://www.loomio.com",
+    tags: ["liquid-democracy", "rotating-leadership"],
+    yearFounded: 2012,
+    layer: 3,
+  },
+  {
+    name: "PSPD (People's Solidarity for Participatory Democracy)",
+    location: "Seoul, South Korea",
+    description:
+      "One of Asia's leading civil society organizations advocating for participatory governance, government accountability, and democratic reform through citizen monitoring and legislative proposals.",
+    websiteUrl: "https://www.peoplepower21.org",
+    tags: ["participatory-budgeting"],
+    yearFounded: 1994,
+    layer: 3,
+  },
+
+  // Layer 4: Economy (additional)
+  {
+    name: "BerkShares",
+    location: "Berkshire County, Massachusetts, USA",
+    description:
+      "A local complementary currency accepted by 400+ businesses. Has channeled over $10 million into the local economy and recently expanded to digital payments.",
+    websiteUrl: "https://berkshares.org",
+    tags: ["local-currency"],
+    yearFounded: 2006,
+    layer: 4,
+  },
+  {
+    name: "Banco Palmas",
+    location: "Fortaleza, Brazil",
+    description:
+      "Brazil's first community development bank, issuing the 'Palmas' social currency alongside microcredit. Has inspired 50+ similar community banks across Brazil.",
+    websiteUrl: "https://www.institutobancopalmas.org",
+    tags: ["local-currency", "commons"],
+    yearFounded: 1998,
+    layer: 4,
+  },
+  {
+    name: "Fureai Kippu",
+    location: "Japan (nationwide)",
+    description:
+      "A time-banking system for elderly care where participants earn credits by assisting seniors. Over 370 local schemes across Japan, pioneering mutual aid for an aging society.",
+    websiteUrl: "https://www.sawayakazaidan.or.jp",
+    tags: ["time-banking"],
+    yearFounded: 1995,
+    layer: 4,
+  },
+  {
+    name: "CoopCycle",
+    location: "Paris, France (pan-European)",
+    description:
+      "A federation of worker-owned bicycle delivery cooperatives sharing open-source logistics software. Operating in 6+ EU countries as an alternative to gig-economy platforms.",
+    websiteUrl: "https://coopcycle.org",
+    tags: ["cooperative"],
+    yearFounded: 2017,
+    layer: 4,
+  },
+  {
+    name: "Open Source Ecology",
+    location: "Maysville, Missouri, USA",
+    description:
+      "Developing the Global Village Construction Set — open-source blueprints for 50 essential industrial machines. All designs freely published for anyone to fabricate low-cost equipment.",
+    websiteUrl: "https://www.opensourceecology.org",
+    tags: ["commons"],
+    yearFounded: 2003,
+    layer: 4,
+  },
+  {
+    name: "Plastic Bank",
+    location: "Vancouver, Canada (Haiti, Philippines, Indonesia, Brazil, Egypt)",
+    description:
+      "Turns ocean-bound plastic into currency — collectors exchange gathered plastic for income or goods. Recovered material is reprocessed into Social Plastic for consumer goods.",
+    websiteUrl: "https://plasticbank.com",
+    tags: ["circular-economy"],
+    yearFounded: 2013,
+    layer: 4,
+  },
+  {
+    name: "Fairphone",
+    location: "Amsterdam, Netherlands",
+    description:
+      "Produces modular, repairable smartphones with fair-trade and recycled materials. Demonstrates circular-economy principles in consumer electronics with user-serviceable components.",
+    websiteUrl: "https://www.fairphone.com",
+    tags: ["circular-economy"],
+    yearFounded: 2013,
+    layer: 4,
+  },
+  {
+    name: "Amul (GCMMF)",
+    location: "Anand, Gujarat, India",
+    description:
+      "India's largest dairy cooperative owned by 3.6 million milk-producer members. Transformed India from milk-deficient to the world's largest milk producer, returning profits to small farmers.",
+    websiteUrl: "https://amul.com",
+    tags: ["cooperative"],
+    yearFounded: 1946,
+    layer: 4,
+  },
+
+  // Layer 5: Education & Culture (additional)
+  {
+    name: "Universidad de la Tierra (Unitierra)",
+    location: "Oaxaca, Mexico",
+    description:
+      "An autonomous learning space with no teachers, classrooms, or curricula. Learners pursue knowledge through study circles and hands-on practice, centering community autonomy and decolonization.",
+    websiteUrl: "https://unitierra.org",
+    tags: ["democratic-education", "community-learning"],
+    yearFounded: 2001,
+    layer: 5,
+  },
+  {
+    name: "Kerala Sastra Sahitya Parishad (KSSP)",
+    location: "Kerala, India",
+    description:
+      "A people's science movement with 50,000+ members across 1,200 local units popularizing scientific literacy through cultural troupes and village workshops. Key driver of Kerala's total literacy campaign.",
+    websiteUrl: "https://kssp.in",
+    tags: ["community-learning", "open-knowledge"],
+    yearFounded: 1962,
+    layer: 5,
+  },
+  {
+    name: "Karkhana Samuha",
+    location: "Kathmandu, Nepal",
+    description:
+      "Builds a culture of experimentation among Nepali students through STEAM kits and maker education. 80+ partner schools and 22 makerspaces across all 7 provinces of Nepal.",
+    websiteUrl: "https://karkhana.asia",
+    tags: ["maker-space", "learning-by-doing"],
+    yearFounded: 2016,
+    layer: 5,
+  },
+  {
+    name: "EUDEC",
+    location: "Berlin, Germany (pan-European)",
+    description:
+      "A network of democratic schools and educators across Europe promoting student self-determination and participatory governance where students and staff have equal voice.",
+    websiteUrl: "https://eudec.org",
+    tags: ["democratic-education"],
+    yearFounded: 2008,
+    layer: 5,
+  },
+  {
+    name: "Global Innovation Gathering",
+    location: "Berlin, Germany (global network)",
+    description:
+      "A network of innovation hub founders and grassroots technologists from the Global South and North collaborating on critical making, open hardware, and inclusive innovation.",
+    websiteUrl: "https://globalinnovationgathering.org",
+    tags: ["maker-space", "open-knowledge"],
+    yearFounded: 2013,
+    layer: 5,
+  },
+  {
+    name: "Enspiral",
+    location: "Wellington, New Zealand",
+    description:
+      "A self-governing collective of ~300 contributors practicing radical collaboration and peer-to-peer skill development without hierarchy. Incubated Loomio for participatory governance.",
+    websiteUrl: "https://www.enspiral.com",
+    tags: ["community-learning", "skill-sharing"],
+    yearFounded: 2010,
+    layer: 5,
+  },
+
+  // Layer 6: Energy & Environment (additional)
+  {
+    name: "Enercoop",
+    location: "Paris, France",
+    description:
+      "A cooperative network of 11 regional co-ops supplying 100% renewable electricity across France. 100,000+ clients and 55,000 cooperative members purchasing from 524+ renewable producers.",
+    websiteUrl: "https://www.enercoop.fr",
+    tags: ["energy-cooperative", "community-energy"],
+    yearFounded: 2005,
+    layer: 6,
+  },
+  {
+    name: "Coopernico",
+    location: "Lisbon, Portugal",
+    description:
+      "Portugal's only national-scale renewable energy cooperative. 4,400+ members, 37 solar installations across 10 regions, over EUR 2 million invested in decentralized solar.",
+    websiteUrl: "https://www.coopernico.org",
+    tags: ["energy-cooperative", "community-energy"],
+    yearFounded: 2013,
+    layer: 6,
+  },
+  {
+    name: "Middelgrunden Wind Cooperative",
+    location: "Copenhagen, Denmark",
+    description:
+      "8,650 citizens co-own half of a 40 MW offshore wind farm. Inspired Denmark's mandate that new wind projects must be at least 20% community-owned.",
+    websiteUrl: "https://www.middelgrunden.dk",
+    tags: ["energy-cooperative", "community-energy"],
+    yearFounded: 1997,
+    layer: 6,
+  },
+  {
+    name: "REScoop.eu",
+    location: "Brussels, Belgium (pan-European)",
+    description:
+      "The European federation of renewable energy cooperatives representing 2,500 energy communities and 2 million citizens across 25 countries through 121 member organizations.",
+    websiteUrl: "https://www.rescoop.eu",
+    tags: ["energy-cooperative", "community-energy"],
+    yearFounded: 2013,
+    layer: 6,
+  },
+  {
+    name: "Earth Law Center",
+    location: "Durango, Colorado, USA",
+    description:
+      "Advances legal recognition of ecosystems' inherent rights. Secured the first rights-of-river decision in Peru for the Maranon River in 2024. Partners with Indigenous communities globally.",
+    websiteUrl: "https://www.earthlawcenter.org",
+    tags: ["rights-of-nature"],
+    yearFounded: 2008,
+    layer: 6,
+  },
+  {
+    name: "Africa Collect Textiles",
+    location: "Nairobi, Kenya",
+    description:
+      "Collects, sorts, recycles, and upcycles used textiles across East Africa, transforming unwearable garments into new products and creating local employment while diverting waste from landfills.",
+    websiteUrl: "https://africacollecttextiles.com",
+    tags: ["circular-materials"],
+    yearFounded: 2014,
+    layer: 6,
+  },
+  {
+    name: "Regeneration International",
+    location: "Minneapolis, USA (global network)",
+    description:
+      "A global network of 700+ partner organizations in 70+ countries promoting regenerative food, farming, and land management to restore climate stability and rebuild soils.",
+    websiteUrl: "https://regenerationinternational.org",
+    tags: ["regenerative-land"],
+    yearFounded: 2015,
+    layer: 6,
+  },
+
+  // Layer 7: Housing & Shelter (additional)
+  {
+    name: "Fideicomiso de la Tierra del Caño Martín Peña",
+    location: "San Juan, Puerto Rico",
+    description:
+      "A community land trust securing tenure for ~2,000 families in informal settlements. Governed by a resident-majority council — designed for consolidated settlements rather than new development.",
+    websiteUrl: "https://fideicomisomartinpena.org/",
+    tags: ["community-land-trust", "affordable-housing"],
+    yearFounded: 2004,
+    layer: 7,
+  },
+  {
+    name: "Dudley Neighbors Inc.",
+    location: "Boston, Massachusetts, USA",
+    description:
+      "A CLT stewarding 30+ acres with 226 affordable homes. The only CLT in the US ever granted eminent domain authority, enabling it to acquire vacant land for community benefit.",
+    websiteUrl: "https://www.dudleyneighbors.org/",
+    tags: ["community-land-trust", "affordable-housing"],
+    yearFounded: 1988,
+    layer: 7,
+  },
+  {
+    name: "Sostre Cívic",
+    location: "Barcelona, Spain",
+    description:
+      "An umbrella cooperative promoting right-of-use housing where the co-op retains ownership and members hold indefinite use rights. 1,500+ members, 28 projects, with social inclusion mandates.",
+    websiteUrl: "https://sostrecivic.coop/en/",
+    tags: ["cooperative-housing", "affordable-housing"],
+    yearFounded: 2004,
+    layer: 7,
+  },
+  {
+    name: "Kalkbreite Cooperative",
+    location: "Zurich, Switzerland",
+    description:
+      "A mixed-use housing cooperative built atop a tram depot — 97 apartments plus commercial and community spaces. Residents commit to car-free living and capped per-person space.",
+    websiteUrl: "https://www.kalkbreite.net/en/",
+    tags: ["cooperative-housing", "co-housing"],
+    yearFounded: 2007,
+    layer: 7,
+  },
+  {
+    name: "Sargfabrik",
+    location: "Vienna, Austria",
+    description:
+      "112-unit integrative housing project on a former coffin factory. Shared bathhouse, cultural center, kindergarten, restaurant, and roof garden, with units for sheltered housing and special needs.",
+    websiteUrl: "https://www.sargfabrik.at/",
+    tags: ["co-housing", "cooperative-housing"],
+    yearFounded: 1996,
+    layer: 7,
+  },
+  {
+    name: "Muungano wa Wanavijiji",
+    location: "Nairobi, Kenya",
+    description:
+      "Kenyan federation of slum dwellers with ~100,000 members in 1,000 groups across 14 counties. Supports community-led land tenure, savings schemes, and settlement upgrading.",
+    websiteUrl: "https://www.muungano.net/",
+    tags: ["community-land-trust", "affordable-housing"],
+    yearFounded: 1996,
+    layer: 7,
+  },
+  {
+    name: "Minsnail Housing Co-op",
+    location: "Seoul, South Korea",
+    description:
+      "Youth-led housing cooperative providing homes for 200+ young adults across Seoul at ~60% of market rent. 15 shared houses with solar panels and car-sharing programs.",
+    websiteUrl: "https://www.housinginternational.coop/resources/the-origins-of-minsnail-housing-co-op-in-south-korea/",
+    tags: ["cooperative-housing", "affordable-housing"],
+    yearFounded: 2014,
+    layer: 7,
+  },
+
+  // Layer 8: Technology & Infrastructure (additional)
+  {
+    name: "B4RN (Broadband for the Rural North)",
+    location: "Lancashire, United Kingdom",
+    description:
+      "A community benefit society providing gigabit fiber broadband to rural communities, built by volunteers who dig trenches across farmland. 11,000+ customers, structured so it can never be sold.",
+    websiteUrl: "https://b4rn.org.uk",
+    tags: ["community-broadband"],
+    yearFounded: 2011,
+    layer: 8,
+  },
+  {
+    name: "Zenzeleni Networks",
+    location: "Eastern Cape, South Africa",
+    description:
+      "South Africa's first cooperative-owned ISP, offering solar-powered wireless broadband in rural Mankosi at prices 20x lower than commercial operators. Owned and run by community members.",
+    websiteUrl: "https://zenzeleni.net",
+    tags: ["community-broadband", "decentralized"],
+    yearFounded: 2012,
+    layer: 8,
+  },
+  {
+    name: "Rhizomatica",
+    location: "Oaxaca, Mexico",
+    description:
+      "Builds autonomous cellular networks for indigenous communities using open-source GSM technology. Won Mexico's first social indigenous telecommunications concession in 2016.",
+    websiteUrl: "https://www.rhizomatica.org",
+    tags: ["open-source", "decentralized"],
+    yearFounded: 2009,
+    layer: 8,
+  },
+  {
+    name: "AlterMundi",
+    location: "Cordoba, Argentina",
+    description:
+      "Develops open-source tools like LibreMesh and LibreRouter enabling rural communities to build their own wireless mesh networks without specialized expertise.",
+    websiteUrl: "https://www.altermundi.net",
+    tags: ["mesh-network", "open-source"],
+    yearFounded: 2012,
+    layer: 8,
+  },
+  {
+    name: "Digital Empowerment Foundation",
+    location: "New Delhi, India",
+    description:
+      "Has built 150+ community wireless networks across India, training local 'barefoot engineers' to maintain their own connectivity. Digitally empowered 35+ million people.",
+    websiteUrl: "https://www.defindia.org",
+    tags: ["community-broadband", "digital-commons"],
+    yearFounded: 2002,
+    layer: 8,
+  },
+  {
+    name: "Global Indigenous Data Alliance",
+    location: "International (Aotearoa, Australia, USA, Canada)",
+    description:
+      "Developed the CARE Principles for Indigenous Data Governance, asserting collective benefit, authority, responsibility, and ethics in Indigenous data management across national networks.",
+    websiteUrl: "https://www.gida-global.org",
+    tags: ["data-sovereignty", "digital-commons"],
+    yearFounded: 2015,
+    layer: 8,
+  },
+
+  // Layer 9: Water & Sanitation (additional)
+  {
+    name: "CAWST",
+    location: "Calgary, Canada (global)",
+    description:
+      "Made the biosand filter design freely available as open-source. Since 2001, helped 72 million people gain better water and sanitation through training-of-trainers programs across Africa, Asia, and Latin America.",
+    websiteUrl: "https://www.cawst.org",
+    tags: ["open-source-purification", "community-water"],
+    yearFounded: 2001,
+    layer: 9,
+  },
+  {
+    name: "Water For People",
+    location: "Denver, USA (9 countries)",
+    description:
+      "Builds lasting water systems using an 'Everyone Forever' model targeting full district-wide coverage. Ensures communities have local capacity to maintain infrastructure long-term.",
+    websiteUrl: "https://www.waterforpeople.org",
+    tags: ["community-water", "sanitation"],
+    yearFounded: 1991,
+    layer: 9,
+  },
+  {
+    name: "iDE",
+    location: "Denver, USA (Cambodia, Bangladesh, Ethiopia, Ghana, Nepal)",
+    description:
+      "Creates local sanitation supply chains enabling entrepreneurs to sell affordable latrines and water filters. Over 2 million improved latrines sold across nine countries.",
+    websiteUrl: "https://www.ideglobal.org",
+    tags: ["sanitation", "community-water"],
+    yearFounded: 1982,
+    layer: 9,
+  },
+  {
+    name: "Fundacion Avina",
+    location: "Panama City, Panama (15+ Latin American countries)",
+    description:
+      "Has provided clean water access to 5.3+ million people through 80,000+ community water organizations across Latin America. Developed the DOCSAS diagnostic platform deployed in 15 countries.",
+    websiteUrl: "https://www.avina.net",
+    tags: ["water-cooperative", "community-water"],
+    yearFounded: 1994,
+    layer: 9,
+  },
+  {
+    name: "Surge for Water",
+    location: "Chicago, USA (12 countries)",
+    description:
+      "Women-founded nonprofit with 9,200+ water-access projects reaching 779,000+ people. Prioritizes empowerment of women and girls in sustainable water and sanitation outcomes.",
+    websiteUrl: "https://surgeforwater.org",
+    tags: ["community-water", "sanitation"],
+    yearFounded: 2008,
+    layer: 9,
+  },
+
+  // Layer 10: Transportation & Mobility (additional)
+  {
+    name: "Open Streets Cape Town",
+    location: "Cape Town, South Africa",
+    description:
+      "Africa's first formal Open Streets programme. Organizes car-free days and convened the first Open Streets Exchange for 11 African cities to share knowledge on reclaiming streets.",
+    websiteUrl: "https://openstreets.org.za",
+    tags: ["car-free"],
+    yearFounded: 2012,
+    layer: 10,
+  },
+  {
+    name: "ITDP (Institute for Transportation and Development Policy)",
+    location: "New York, USA (Brazil, China, India, Indonesia, Kenya, Mexico)",
+    description:
+      "Global nonprofit promoting sustainable transportation. Works with cities across Africa, Asia, and Latin America to implement bus rapid transit, bike lanes, and pedestrian infrastructure.",
+    websiteUrl: "https://itdp.org",
+    tags: ["cycling-infrastructure", "walkable-city"],
+    yearFounded: 1985,
+    layer: 10,
+  },
+  {
+    name: "Pontevedra (Car-Free City)",
+    location: "Pontevedra, Spain",
+    description:
+      "Removed cars from 1.3 million sqm of city center. Zero traffic fatalities since 2011, 70% CO2 reduction, two-thirds of trips made on foot. A global model for car-free urbanism.",
+    websiteUrl: "https://ok.pontevedra.gal/en/city-without-cars/",
+    tags: ["car-free", "walkable-city"],
+    yearFounded: 1999,
+    layer: 10,
+  },
+  {
+    name: "EnCicla",
+    location: "Medellin, Colombia",
+    description:
+      "Free public bike-sharing integrated with Medellin's metro, cable cars, and BRT. 60+ stations, 1,300 bikes serving 10 municipalities at no cost to users.",
+    websiteUrl: "https://www.encicla.gov.co",
+    tags: ["shared-mobility", "cycling-infrastructure"],
+    yearFounded: 2011,
+    layer: 10,
+  },
+  {
+    name: "Green Raiteros",
+    location: "Huron, California, USA",
+    description:
+      "The first electric vehicle community ridesharing service in the US, providing free rides to low-income farmworkers. Modernizes traditional Latino raitero culture with community-owned EVs.",
+    websiteUrl: "https://sharedusemobilitycenter.org/sumc-celebrates-launch-of-new-ev-rideshare-green-raiteros/",
+    tags: ["shared-mobility", "community-transit"],
+    yearFounded: 2018,
+    layer: 10,
+  },
+  {
+    name: "Walk21 Foundation",
+    location: "Cheltenham, United Kingdom (global)",
+    description:
+      "International charity promoting walkability since 2000. Created the Pathways to Walkable Cities platform documenting 100+ walking strategies across every continent.",
+    websiteUrl: "https://walk21.com",
+    tags: ["walkable-city"],
+    yearFounded: 2000,
+    layer: 10,
+  },
+
+  // Layer 11: Communication & Media (additional)
+  {
+    name: "Agencia Publica",
+    location: "Sao Paulo, Brazil",
+    description:
+      "Brazil's largest nonprofit investigative newsroom, founded by women reporters. Investigations republished by 700+ outlets with 90+ journalism awards.",
+    websiteUrl: "https://apublica.org",
+    tags: ["independent-journalism"],
+    yearFounded: 2011,
+    layer: 11,
+  },
+  {
+    name: "Mada Masr",
+    location: "Cairo, Egypt",
+    description:
+      "One of the few Egyptian outlets still openly reporting critically on the government. Publishes long-form features in Arabic and English covering politics, economy, culture, and society.",
+    websiteUrl: "https://www.madamasr.com",
+    tags: ["independent-journalism"],
+    yearFounded: 2013,
+    layer: 11,
+  },
+  {
+    name: "Malaysiakini",
+    location: "Kuala Lumpur, Malaysia",
+    description:
+      "Malaysia's first independent online news portal providing an alternative voice in a government-linked media landscape. Transitioning to foundation ownership for long-term independence.",
+    websiteUrl: "https://www.malaysiakini.com",
+    tags: ["independent-journalism"],
+    yearFounded: 1999,
+    layer: 11,
+  },
+  {
+    name: "CORAPE",
+    location: "Quito, Ecuador",
+    description:
+      "A network of 100+ community radio stations across Ecuador with sub-networks for Amazonian communities, Kichwa-language broadcasting, migration, youth, and environment.",
+    websiteUrl: "https://corape.org.ec",
+    tags: ["community-media"],
+    yearFounded: 1990,
+    layer: 11,
+  },
+  {
+    name: "PeerTube",
+    location: "Lyon, France",
+    description:
+      "A free, open-source, decentralized video hosting platform by Framasoft. Uses ActivityPub federation and peer-to-peer streaming — any organization can run its own interconnected video instance.",
+    websiteUrl: "https://joinpeertube.org",
+    tags: ["open-platform"],
+    yearFounded: 2018,
+    layer: 11,
+  },
+  {
+    name: "404 Media",
+    location: "New York, USA",
+    description:
+      "A worker-owned technology journalism outlet founded by former Vice Motherboard reporters. Fully journalist-owned with equal equity, reached profitability within six months through subscriptions.",
+    websiteUrl: "https://www.404media.co",
+    tags: ["media-cooperative", "independent-journalism"],
+    yearFounded: 2023,
+    layer: 11,
+  },
+  {
+    name: "Ground News",
+    location: "Kitchener, Ontario, Canada",
+    description:
+      "Aggregates news from thousands of sources showing how stories are covered across the political spectrum. Visualizes bias, ownership, and factuality to help users identify blind spots.",
+    websiteUrl: "https://ground.news",
+    tags: ["media-literacy"],
+    yearFounded: 2018,
+    layer: 11,
+  },
+
+  // Layer 12: Safety & Conflict Resolution (additional)
+  {
+    name: "Nonviolent Peaceforce",
+    location: "Geneva, Switzerland (10+ countries)",
+    description:
+      "Deploys trained, unarmed civilians to protect communities in violent conflicts through presence and relationship-building. Endorsed by nine Nobel laureates, trained 26,000+ individuals.",
+    websiteUrl: "https://nonviolentpeaceforce.org",
+    tags: ["conflict-mediation", "community-safety"],
+    yearFounded: 2002,
+    layer: 12,
+  },
+  {
+    name: "Igarape Institute",
+    location: "Rio de Janeiro, Brazil",
+    description:
+      "Think-and-do tank focused on citizen security and violence prevention across Latin America and Africa. Tracks 1,300+ interventions in 20+ countries through its Citizen Security Dashboard.",
+    websiteUrl: "https://igarape.org.br/en/",
+    tags: ["violence-interruption", "community-safety"],
+    yearFounded: 2011,
+    layer: 12,
+  },
+  {
+    name: "Mediators Beyond Borders International",
+    location: "Washington, D.C., USA (33+ countries)",
+    description:
+      "A global network of 200+ conflict resolution specialists providing mediation and peacebuilding training, with regional hubs across Africa, Asia, Latin America, and the Middle East.",
+    websiteUrl: "https://mediatorsbeyondborders.org",
+    tags: ["conflict-mediation"],
+    yearFounded: 2006,
+    layer: 12,
+  },
+  {
+    name: "Mediation Northern Ireland",
+    location: "Belfast, Northern Ireland, UK",
+    description:
+      "Provides conflict resolution services across Northern Ireland since the Troubles. Works at grassroots, organizational, and political levels — 'systemic mediation' — for three decades.",
+    websiteUrl: "https://mediationni.org",
+    tags: ["conflict-mediation", "community-safety"],
+    yearFounded: 1991,
+    layer: 12,
+  },
+  {
+    name: "Mindanao Peacebuilding Institute",
+    location: "Davao City, Philippines",
+    description:
+      "An Asian peacebuilding training center born from decades of conflict in Mindanao. Offers courses in conflict transformation, restorative justice, trauma healing, and interfaith dialogue.",
+    websiteUrl: "https://www.mpiasia.net",
+    tags: ["conflict-mediation", "restorative-justice"],
+    yearFounded: 2000,
+    layer: 12,
+  },
+  {
+    name: "Ujamaa Africa",
+    location: "Nairobi, Kenya (5 African countries)",
+    description:
+      "Prevents gender-based violence through school programs combining self-defense for girls with positive-masculinity education for boys. Achieved 50% reduction in reported sexual assaults.",
+    websiteUrl: "https://www.ujamaa-africa.org",
+    tags: ["violence-interruption", "community-safety"],
+    yearFounded: 2007,
+    layer: 12,
+  },
+  {
+    name: "READI Chicago",
+    location: "Chicago, Illinois, USA",
+    description:
+      "Combines cognitive behavioral therapy with paid transitional employment for highest-risk individuals. 79% fewer shooting arrests. Every dollar returns $3.50-$17.70 in reduced violence costs.",
+    websiteUrl: "https://www.heartlandalliance.org/readi/",
+    tags: ["violence-interruption", "community-safety"],
+    yearFounded: 2017,
+    layer: 12,
+  },
+
+  // Layer 13: Human Rights (additional)
+  {
+    name: "HURIDOCS",
+    location: "Geneva, Switzerland",
+    description:
+      "Helps human rights organizations manage evidence and case documentation. Develops the open-source Uwazi database platform used by defenders worldwide for accountability efforts.",
+    websiteUrl: "https://huridocs.org",
+    tags: ["citizen-documentation", "open-data"],
+    yearFounded: 1982,
+    layer: 13,
+  },
+  {
+    name: "Namati",
+    location: "Washington, DC, USA (India, Myanmar, Mozambique, Sierra Leone)",
+    description:
+      "Trains community paralegals and convenes the Grassroots Justice Network of 3,000+ groups across 160 countries, directly improving lives for over 5 million people through legal empowerment.",
+    websiteUrl: "https://namati.org",
+    tags: ["community-legal-aid", "human-rights-monitoring"],
+    yearFounded: 2011,
+    layer: 13,
+  },
+  {
+    name: "CIVICUS",
+    location: "Johannesburg, South Africa",
+    description:
+      "Tracks civic freedoms in 196 countries through its CIVICUS Monitor, rating each country's civic space using near real-time data on freedom of association, assembly, and expression.",
+    websiteUrl: "https://www.civicus.org",
+    tags: ["open-data", "citizen-documentation"],
+    yearFounded: 1993,
+    layer: 13,
+  },
+  {
+    name: "Derechos Digitales",
+    location: "Santiago, Chile (7 Latin American countries)",
+    description:
+      "Defends human rights in the digital environment through legal research, policy analysis, advocacy, and digital security trainings across Latin America.",
+    websiteUrl: "https://www.derechosdigitales.org",
+    tags: ["digital-rights"],
+    yearFounded: 2005,
+    layer: 13,
+  },
+  {
+    name: "Mnemonic (Syrian Archive)",
+    location: "Berlin, Germany",
+    description:
+      "Archives and preserves digital documentation of human rights violations. Operates sister archives for Syria, Sudan, and Yemen, preserving at-risk evidence for accountability.",
+    websiteUrl: "https://mnemonic.org",
+    tags: ["citizen-documentation", "open-data"],
+    yearFounded: 2014,
+    layer: 13,
+  },
+  {
+    name: "Forest Peoples Programme",
+    location: "United Kingdom (tropical regions globally)",
+    description:
+      "Supports indigenous and forest-dependent peoples in defending lands and rights across Africa, Asia, and Latin America. Combines legal advocacy with community mapping and participatory monitoring.",
+    websiteUrl: "https://www.forestpeoples.org",
+    tags: ["indigenous-rights", "community-legal-aid"],
+    yearFounded: 1990,
+    layer: 13,
+  },
+  {
+    name: "OpenArchive",
+    location: "San Francisco, USA",
+    description:
+      "Builds the Save app helping citizen journalists securely preserve, verify, and share eyewitness media using distributed backends outside corporate platforms. Co-designed with at-risk communities.",
+    websiteUrl: "https://open-archive.org",
+    tags: ["citizen-documentation", "digital-rights"],
+    yearFounded: 2015,
+    layer: 13,
+  },
 ];
 
 export function getExamplesByLayer(layer: number): Example[] {
