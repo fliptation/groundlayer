@@ -72,8 +72,50 @@ export default async function ContributePage() {
         {tCollab("subIntro")}
       </p>
 
-      {/* Section cards — projects, ideas, discussions */}
+      {/* Section cards */}
       <div className="grid gap-5 mb-20">
+        {/* Submit a project card */}
+        <Link
+          href="/contribute/projects/new"
+          className="group block animate-fade-up delay-4"
+        >
+          <div className="relative bg-warm-white border border-brown-light/12 rounded-3xl p-8 hover:border-green-muted/30 transition-all duration-300 hover:shadow-xl hover:shadow-green-deep/[0.03] hover:-translate-y-0.5">
+            <div className="flex items-start gap-5">
+              <div className="text-green-sage mt-1 shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h2
+                  className="text-xl font-bold text-green-deep group-hover:text-terracotta transition-colors duration-300 mb-2"
+                  style={{ fontFamily: "var(--font-playfair), serif" }}
+                >
+                  {tCollab(`sections.projects.title`)}
+                </h2>
+                <p
+                  className="text-brown/60 text-sm leading-relaxed"
+                  style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                >
+                  {tCollab(`sections.projects.description`)}
+                </p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                className="text-brown/20 group-hover:text-terracotta group-hover:translate-x-1 transition-all duration-300 mt-2 shrink-0"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </Link>
+
         {sectionKeys.map((key, i) => (
           <Link
             key={key}
