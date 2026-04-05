@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
@@ -8,15 +9,44 @@ export async function generateMetadata() {
   };
 }
 
+const sectionIcons = {
+  projects: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-6H4a2 2 0 0 0-2 2v16z" />
+      <path d="M14 2v6h6" />
+    </svg>
+  ),
+  ideas: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 18h6" />
+      <path d="M10 22h4" />
+      <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" />
+    </svg>
+  ),
+  discussions: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  ),
+};
+
+const sectionMeta: Record<string, { href: string; color: string }> = {
+  projects: { href: "/contribute/projects", color: "green-sage" },
+  ideas: { href: "/contribute/ideas", color: "terracotta" },
+  discussions: { href: "/contribute/discussions", color: "brown" },
+};
+
 export default async function ContributePage() {
   const t = await getTranslations("contribute");
+  const tCollab = await getTranslations("collaborate");
   const tCommon = await getTranslations("common");
 
   const wayKeys = Object.keys(t.raw("ways"));
   const guidelineKeys = Object.keys(t.raw("guidelines"));
+  const sectionKeys = ["projects", "ideas", "discussions"] as const;
 
   return (
-    <article className="max-w-3xl mx-auto px-6 lg:px-10 py-20 md:py-28">
+    <article className="max-w-4xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       {/* Eyebrow */}
       <div
         className="flex items-center gap-3 mb-6 animate-fade-up"
@@ -59,6 +89,59 @@ export default async function ContributePage() {
           ),
         })}
       </p>
+
+      {/* Section cards — projects, ideas, discussions */}
+      <div className="grid gap-5 mb-20">
+        {sectionKeys.map((key, i) => (
+          <Link
+            key={key}
+            href={sectionMeta[key].href}
+            className={`group block animate-fade-up delay-${i + 4}`}
+          >
+            <div className="relative bg-warm-white border border-brown-light/12 rounded-3xl p-8 hover:border-green-muted/30 transition-all duration-300 hover:shadow-xl hover:shadow-green-deep/[0.03] hover:-translate-y-0.5">
+              <div className="flex items-start gap-5">
+                <div className={`text-${sectionMeta[key].color} mt-1 shrink-0`}>
+                  {sectionIcons[key]}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between gap-4 mb-2">
+                    <h2
+                      className="text-xl font-bold text-green-deep group-hover:text-terracotta transition-colors duration-300"
+                      style={{ fontFamily: "var(--font-playfair), serif" }}
+                    >
+                      {tCollab(`sections.${key}.title`)}
+                    </h2>
+                    <span
+                      className="text-[10px] font-semibold uppercase tracking-[0.15em] text-brown/30 shrink-0"
+                      style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                    >
+                      {tCollab(`sections.${key}.stats`)}
+                    </span>
+                  </div>
+                  <p
+                    className="text-brown/60 text-sm leading-relaxed"
+                    style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                  >
+                    {tCollab(`sections.${key}.description`)}
+                  </p>
+                </div>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  className="text-brown/20 group-hover:text-terracotta group-hover:translate-x-1 transition-all duration-300 mt-2 shrink-0"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
 
       {/* Ways to contribute */}
       <div className="space-y-5 mb-20">
@@ -130,6 +213,19 @@ export default async function ContributePage() {
           ))}
         </div>
       </section>
+
+      {/* Getting started note */}
+      <div
+        className="bg-green-light/30 border border-green-muted/20 rounded-2xl p-6 text-center mb-10"
+        style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+      >
+        <p className="text-green-deep text-sm font-medium mb-1">
+          {tCollab("newHere")}
+        </p>
+        <p className="text-brown/60 text-sm">
+          {tCollab("newHereDescription")}
+        </p>
+      </div>
 
       {/* CTA */}
       <div className="text-center" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>

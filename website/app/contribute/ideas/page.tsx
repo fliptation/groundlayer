@@ -78,7 +78,7 @@ export default function IdeasPage() {
   return (
     <article className="max-w-4xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/collaborate" className="hover:text-terracotta transition-colors">{tCollaborate("heading")}</Link>
+        <Link href="/contribute" className="hover:text-terracotta transition-colors">{tCollaborate("heading")}</Link>
         <span>/</span>
         <span className="text-brown/70">{t("breadcrumb")}</span>
       </nav>
@@ -94,7 +94,7 @@ export default function IdeasPage() {
         </div>
         {user && (
           <Button asChild className="bg-brown-dark hover:bg-terracotta rounded-full shrink-0">
-            <Link href="/collaborate/ideas/new">
+            <Link href="/contribute/ideas/new">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <path d="M12 5v14M5 12h14" />
               </svg>

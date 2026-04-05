@@ -49,12 +49,12 @@ export default function EditProjectPage() {
         });
         // Check ownership
         if (user && data.userId !== user.id) {
-          router.push("/collaborate/projects");
+          router.push("/contribute/projects");
         }
         setLoading(false);
       })
       .catch(() => {
-        router.push("/collaborate/projects");
+        router.push("/contribute/projects");
       });
   }, [id, user, router]);
 
@@ -92,17 +92,17 @@ export default function EditProjectPage() {
       return;
     }
 
-    router.push("/collaborate/projects");
+    router.push("/contribute/projects");
   }
 
   return (
     <article className="max-w-2xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/collaborate" className="hover:text-terracotta transition-colors">
+        <Link href="/contribute" className="hover:text-terracotta transition-colors">
           Collaborate
         </Link>
         <span>/</span>
-        <Link href="/collaborate/projects" className="hover:text-terracotta transition-colors">
+        <Link href="/contribute/projects" className="hover:text-terracotta transition-colors">
           {t("breadcrumb")}
         </Link>
         <span>/</span>
@@ -211,7 +211,7 @@ export default function EditProjectPage() {
                 {submitting ? t("saving") : t("saveChanges")}
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="/collaborate/projects">{t("cancel")}</Link>
+                <Link href="/contribute/projects">{t("cancel")}</Link>
               </Button>
             </div>
           </form>

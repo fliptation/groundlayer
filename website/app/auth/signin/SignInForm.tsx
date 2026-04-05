@@ -35,7 +35,7 @@ export default function SignInForm() {
       return;
     }
 
-    router.push("/collaborate");
+    router.push("/contribute");
     router.refresh();
   }
 

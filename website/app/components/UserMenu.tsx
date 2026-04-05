@@ -64,7 +64,7 @@ export default function UserMenu() {
               <p className="text-xs text-brown/40 truncate">{user.email}</p>
             </div>
             <Link
-              href="/collaborate"
+              href="/contribute"
               role="menuitem"
               className="block px-4 py-2.5 text-sm text-brown-dark hover:bg-cream-dark/40 transition-colors"
               onClick={() => setMenuOpen(false)}
@@ -72,7 +72,7 @@ export default function UserMenu() {
               {t("myProfile")}
             </Link>
             <Link
-              href="/collaborate/projects/new"
+              href="/contribute/projects/new"
               role="menuitem"
               className="block px-4 py-2.5 text-sm text-brown-dark hover:bg-cream-dark/40 transition-colors"
               onClick={() => setMenuOpen(false)}
@@ -80,7 +80,7 @@ export default function UserMenu() {
               {t("submitProject")}
             </Link>
             <Link
-              href="/collaborate/ideas/new"
+              href="/contribute/ideas/new"
               role="menuitem"
               className="block px-4 py-2.5 text-sm text-brown-dark hover:bg-cream-dark/40 transition-colors"
               onClick={() => setMenuOpen(false)}

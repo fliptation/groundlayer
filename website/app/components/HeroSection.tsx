@@ -120,32 +120,6 @@ export default async function HeroSection() {
           </div>
         </div>
 
-        {/* Floating stat indicators */}
-        <div
-          className="hidden lg:flex absolute right-10 top-1/2 -translate-y-1/2 flex-col gap-6 animate-fade-up delay-6"
-          style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
-        >
-          {[
-            { num: "6", label: t("stats.layers") },
-            { num: "\u221E", label: t("stats.open") },
-            { num: "0", label: t("stats.gatekeepers") },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center px-4 py-3 border border-brown-light/20 rounded-2xl bg-warm-white/60 backdrop-blur-sm"
-            >
-              <div
-                className="text-2xl font-bold text-green-deep"
-                style={{ fontFamily: "var(--font-playfair), serif" }}
-              >
-                {stat.num}
-              </div>
-              <div className="text-[10px] uppercase tracking-widest text-brown/50 mt-0.5">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

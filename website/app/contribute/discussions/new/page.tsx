@@ -66,15 +66,15 @@ export default function NewDiscussionPage() {
     }
 
     const discussion = await res.json();
-    router.push(`/collaborate/discussions/${discussion.id}`);
+    router.push(`/contribute/discussions/${discussion.id}`);
   }
 
   return (
     <article className="max-w-2xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/collaborate" className="hover:text-terracotta transition-colors">Collaborate</Link>
+        <Link href="/contribute" className="hover:text-terracotta transition-colors">Contribute</Link>
         <span>/</span>
-        <Link href="/collaborate/discussions" className="hover:text-terracotta transition-colors">Discussions</Link>
+        <Link href="/contribute/discussions" className="hover:text-terracotta transition-colors">Discussions</Link>
         <span>/</span>
         <span className="text-brown/70">New</span>
       </nav>
@@ -140,7 +140,7 @@ export default function NewDiscussionPage() {
                 {submitting ? "Creating..." : "Start Discussion"}
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="/collaborate/discussions">Cancel</Link>
+                <Link href="/contribute/discussions">Cancel</Link>
               </Button>
             </div>
           </form>

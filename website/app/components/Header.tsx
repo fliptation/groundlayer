@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/vision", key: "vision" },
   { href: "/layers/food-and-land", key: "layers" },
   { href: "/examples", key: "examples" },
-  { href: "/collaborate", key: "collaborate" },
+  { href: "/contribute", key: "contribute" },
   { href: "/get-started", key: "getStarted" },
 ] as const;
 

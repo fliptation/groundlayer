@@ -67,15 +67,15 @@ export default function NewIdeaPage() {
       return;
     }
 
-    router.push("/collaborate/thank-you");
+    router.push("/contribute/thank-you");
   }
 
   return (
     <article className="max-w-2xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/collaborate" className="hover:text-terracotta transition-colors">Collaborate</Link>
+        <Link href="/contribute" className="hover:text-terracotta transition-colors">Contribute</Link>
         <span>/</span>
-        <Link href="/collaborate/ideas" className="hover:text-terracotta transition-colors">Ideas</Link>
+        <Link href="/contribute/ideas" className="hover:text-terracotta transition-colors">Ideas</Link>
         <span>/</span>
         <span className="text-brown/70">New</span>
       </nav>
@@ -156,7 +156,7 @@ export default function NewIdeaPage() {
                 {submitting ? "Submitting..." : "Share Idea"}
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="/collaborate/ideas">Cancel</Link>
+                <Link href="/contribute/ideas">Cancel</Link>
               </Button>
             </div>
           </form>

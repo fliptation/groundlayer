@@ -344,7 +344,7 @@ export default function ExamplesPage() {
           {t("ctaText")}
         </p>
         <Link
-          href="/collaborate/projects/new"
+          href="/contribute/projects/new"
           className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-green-deep text-white text-sm font-semibold hover:bg-green-mid transition-colors duration-300"
           style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
         >

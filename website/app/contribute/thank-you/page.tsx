@@ -178,7 +178,7 @@ export default function ThankYouPage() {
           }}
         >
           <Link
-            href="/collaborate"
+            href="/contribute"
             className="inline-flex items-center gap-2 px-6 py-3 bg-brown-dark text-white rounded-full text-sm font-semibold hover:bg-terracotta transition-all duration-300"
           >
             Back to Collaborate

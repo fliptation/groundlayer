@@ -105,7 +105,7 @@ export default function DiscussionDetailPage({
       <article className="max-w-3xl mx-auto px-6 lg:px-10 py-20 md:py-28 text-center">
         <p className="text-brown/50 font-sans">Discussion not found.</p>
         <Button variant="ghost" asChild className="mt-4">
-          <Link href="/collaborate/discussions">Back to Discussions</Link>
+          <Link href="/contribute/discussions">Back to Discussions</Link>
         </Button>
       </article>
     );
@@ -114,9 +114,9 @@ export default function DiscussionDetailPage({
   return (
     <article className="max-w-3xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/collaborate" className="hover:text-terracotta transition-colors">Collaborate</Link>
+        <Link href="/contribute" className="hover:text-terracotta transition-colors">Contribute</Link>
         <span>/</span>
-        <Link href="/collaborate/discussions" className="hover:text-terracotta transition-colors">Discussions</Link>
+        <Link href="/contribute/discussions" className="hover:text-terracotta transition-colors">Discussions</Link>
         <span>/</span>
         <span className="text-brown/70 truncate max-w-[200px]">{discussion.title}</span>
       </nav>

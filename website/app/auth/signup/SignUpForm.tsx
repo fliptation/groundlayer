@@ -36,7 +36,7 @@ export default function SignUpForm() {
       return;
     }
 
-    router.push("/collaborate");
+    router.push("/contribute");
     router.refresh();
   }
 

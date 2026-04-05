@@ -50,7 +50,7 @@ export default function DiscussionsPage() {
   return (
     <article className="max-w-4xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/collaborate" className="hover:text-terracotta transition-colors">{tCollaborate("heading")}</Link>
+        <Link href="/contribute" className="hover:text-terracotta transition-colors">{tCollaborate("heading")}</Link>
         <span>/</span>
         <span className="text-brown/70">{t("breadcrumb")}</span>
       </nav>
@@ -66,7 +66,7 @@ export default function DiscussionsPage() {
         </div>
         {user && (
           <Button asChild className="bg-brown-dark hover:bg-terracotta rounded-full shrink-0">
-            <Link href="/collaborate/discussions/new">
+            <Link href="/contribute/discussions/new">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <path d="M12 5v14M5 12h14" />
               </svg>
@@ -101,7 +101,7 @@ export default function DiscussionsPage() {
       ) : (
         <div className="space-y-3">
           {discussions.map((d) => (
-            <Link key={d.id} href={`/collaborate/discussions/${d.id}`}>
+            <Link key={d.id} href={`/contribute/discussions/${d.id}`}>
               <Card className="group bg-warm-white border-brown-light/12 hover:border-green-muted/30 transition-all duration-300 mb-3">
                 <CardContent className="p-5">
                   <div className="flex items-center gap-4">

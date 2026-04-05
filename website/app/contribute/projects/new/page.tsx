@@ -71,16 +71,16 @@ export default function NewProjectPage() {
       return;
     }
 
-    router.push("/collaborate/thank-you");
+    router.push("/contribute/thank-you");
   }
 
   return (
     <article className="max-w-2xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/collaborate" className="hover:text-terracotta transition-colors">Collaborate</Link>
+        <Link href="/contribute" className="hover:text-terracotta transition-colors">Contribute</Link>
         <span>/</span>
-        <Link href="/collaborate/projects" className="hover:text-terracotta transition-colors">Projects</Link>
+        <Link href="/contribute/projects" className="hover:text-terracotta transition-colors">Projects</Link>
         <span>/</span>
         <span className="text-brown/70">New</span>
       </nav>
@@ -191,7 +191,7 @@ export default function NewProjectPage() {
                 {submitting ? "Submitting..." : "Submit Project"}
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="/collaborate/projects">Cancel</Link>
+                <Link href="/contribute/projects">Cancel</Link>
               </Button>
             </div>
           </form>
