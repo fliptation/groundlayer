@@ -10,12 +10,6 @@ export async function generateMetadata() {
 }
 
 const sectionIcons = {
-  projects: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-6H4a2 2 0 0 0-2 2v16z" />
-      <path d="M14 2v6h6" />
-    </svg>
-  ),
   ideas: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M9 18h6" />
@@ -31,7 +25,6 @@ const sectionIcons = {
 };
 
 const sectionMeta: Record<string, { href: string; color: string }> = {
-  projects: { href: "/contribute/projects", color: "green-sage" },
   ideas: { href: "/contribute/ideas", color: "terracotta" },
   discussions: { href: "/contribute/discussions", color: "brown" },
 };
@@ -43,7 +36,7 @@ export default async function ContributePage() {
 
   const wayKeys = Object.keys(t.raw("ways"));
   const guidelineKeys = Object.keys(t.raw("guidelines"));
-  const sectionKeys = ["projects", "ideas", "discussions"] as const;
+  const sectionKeys = ["ideas", "discussions"] as const;
 
   return (
     <article className="max-w-4xl mx-auto px-6 lg:px-10 py-20 md:py-28">
@@ -76,18 +69,7 @@ export default async function ContributePage() {
         className="text-brown/60 leading-relaxed mb-16 max-w-lg animate-fade-up delay-3"
         style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
       >
-        {t.rich("githubIntro", {
-          github: (chunks) => (
-            <a
-              href="https://github.com/groundlayer"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-terracotta hover:text-terracotta-dark font-semibold transition-colors"
-            >
-              {chunks}
-            </a>
-          ),
-        })}
+        {tCollab("subIntro")}
       </p>
 
       {/* Section cards — projects, ideas, discussions */}
@@ -229,17 +211,15 @@ export default async function ContributePage() {
 
       {/* CTA */}
       <div className="text-center" style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}>
-        <a
-          href="https://github.com/groundlayer"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/auth/signup"
           className="group inline-flex items-center gap-2 px-8 py-4 bg-brown-dark text-white rounded-full text-sm font-semibold hover:bg-terracotta-dark transition-all duration-300 hover:shadow-lg hover:shadow-terracotta/15"
         >
-          {tCommon("viewOnGitHub")}
+          {tCommon("signUp")}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="transition-transform duration-300 group-hover:translate-x-1">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
-        </a>
+        </Link>
       </div>
     </article>
   );

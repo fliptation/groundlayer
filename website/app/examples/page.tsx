@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { EXAMPLES } from "@/lib/examples";
 import { LAYERS } from "@/lib/layers";
@@ -12,6 +12,20 @@ type VoteData = Record<
   { score: number; userVote: number | null; commentCount: number }
 >;
 
+type ExampleItem = {
+  name: string;
+  location: string;
+  description: string;
+  websiteUrl: string;
+  tags: string[];
+  yearFounded: number | null;
+  layer: number;
+  isProject?: boolean;
+  projectId?: number;
+};
+
+const PAGE_SIZE = 20;
+
 export default function ExamplesPage() {
   const t = useTranslations("examples");
   const tl = useTranslations("layers");
@@ -19,6 +33,9 @@ export default function ExamplesPage() {
   const [activeLayer, setActiveLayer] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [voteData, setVoteData] = useState<VoteData>({});
+  const [projects, setProjects] = useState<ExampleItem[]>([]);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -26,11 +43,46 @@ export default function ExamplesPage() {
     if (layerParam) setActiveLayer(Number(layerParam));
   }, []);
 
+  // Fetch user-submitted projects
+  useEffect(() => {
+    async function loadProjects() {
+      const res = await fetch("/api/projects?limit=100");
+      if (res.ok) {
+        const { data } = await res.json();
+        setProjects(
+          data.map((p: { id: number; title: string; description: string; layer: number; location: string | null; websiteUrl: string | null; status: string }) => ({
+            name: p.title,
+            location: p.location || "",
+            description: p.description,
+            websiteUrl: p.websiteUrl || "",
+            tags: [],
+            yearFounded: null,
+            layer: p.layer,
+            isProject: true,
+            projectId: p.id,
+          }))
+        );
+      }
+    }
+    loadProjects();
+  }, []);
+
+  const allExamples: ExampleItem[] = [
+    ...EXAMPLES,
+    ...projects.filter(
+      (p) => !EXAMPLES.some((e) => e.name.toLowerCase() === p.name.toLowerCase())
+    ),
+  ];
+
   const loadVotes = useCallback(async () => {
-    const names = EXAMPLES.map((e) => encodeURIComponent(e.name)).join(",");
+    const names = allExamples
+      .filter((e) => !e.isProject)
+      .map((e) => encodeURIComponent(e.name))
+      .join(",");
+    if (!names) return;
     const res = await fetch(`/api/examples/votes?names=${names}`);
     if (res.ok) setVoteData(await res.json());
-  }, []);
+  }, [allExamples.length]);
 
   useEffect(() => {
     loadVotes();
@@ -55,7 +107,7 @@ export default function ExamplesPage() {
     }
   }
 
-  const filtered = EXAMPLES.filter((ex) => {
+  const filtered = allExamples.filter((ex) => {
     if (activeLayer && ex.layer !== activeLayer) return false;
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
@@ -69,9 +121,35 @@ export default function ExamplesPage() {
     return true;
   });
 
+  // Reset visible count when filters change
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [activeLayer, searchQuery]);
+
+  // Infinite scroll with IntersectionObserver
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && visibleCount < filtered.length) {
+          setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, filtered.length));
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [visibleCount, filtered.length]);
+
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
+
   const layerCounts = LAYERS.map((l) => ({
     ...l,
-    count: EXAMPLES.filter((e) => e.layer === l.number).length,
+    count: allExamples.filter((e) => e.layer === l.number).length,
   }));
 
   function layerName(num: number) {
@@ -156,7 +234,7 @@ export default function ExamplesPage() {
               : "text-brown/60 hover:bg-cream-dark/60 hover:text-green-deep"
           }`}
         >
-          {t("all", { count: EXAMPLES.length })}
+          {t("all", { count: allExamples.length })}
         </button>
         {layerCounts.map((l) => (
           <button
@@ -187,7 +265,7 @@ export default function ExamplesPage() {
 
       {/* Examples grid */}
       <div className="grid md:grid-cols-2 gap-4">
-        {filtered.map((ex) => {
+        {visible.map((ex) => {
           const data = voteData[ex.name];
           const score = data?.score ?? 0;
           const userVote = data?.userVote ?? null;
@@ -195,7 +273,7 @@ export default function ExamplesPage() {
 
           return (
             <div
-              key={ex.name}
+              key={ex.isProject ? `project-${ex.projectId}` : ex.name}
               className="group bg-warm-white border border-brown-light/12 rounded-2xl p-6 hover:border-green-muted/30 transition-all duration-300"
             >
               <div className="flex gap-4">
@@ -206,12 +284,12 @@ export default function ExamplesPage() {
                 >
                   <button
                     onClick={() => handleVote(ex.name, 1)}
-                    disabled={!user}
+                    disabled={!user || !!ex.isProject}
                     className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
                       userVote === 1
                         ? "bg-green-deep text-white"
                         : "bg-cream-dark/50 text-brown/30 hover:bg-green-light hover:text-green-deep"
-                    } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
+                    } ${!user || ex.isProject ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
                     title={user ? t("upvote") : t("signInToVote")}
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -231,12 +309,12 @@ export default function ExamplesPage() {
                   </span>
                   <button
                     onClick={() => handleVote(ex.name, -1)}
-                    disabled={!user}
+                    disabled={!user || !!ex.isProject}
                     className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
                       userVote === -1
                         ? "bg-terracotta text-white"
                         : "bg-cream-dark/50 text-brown/30 hover:bg-terracotta-light hover:text-terracotta"
-                    } ${!user ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
+                    } ${!user || ex.isProject ? "cursor-not-allowed opacity-40" : "cursor-pointer"}`}
                     title={user ? t("downvote") : t("signInToVote")}
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -248,33 +326,45 @@ export default function ExamplesPage() {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-3 mb-2">
-                    <Link
-                      href={`/examples/${slugify(ex.name)}`}
-                      className="text-green-deep font-bold hover:text-terracotta transition-colors duration-300"
-                      style={{ fontFamily: "var(--font-playfair), serif" }}
-                    >
-                      {ex.name}
-                    </Link>
-                    <a
-                      href={ex.websiteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="shrink-0 mt-1"
-                      title={t("visitWebsite")}
-                    >
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        className="text-brown/20 hover:text-terracotta transition-colors duration-300"
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href={ex.isProject ? `/examples/${slugify(ex.name)}?project=${ex.projectId}` : `/examples/${slugify(ex.name)}`}
+                        className="text-green-deep font-bold hover:text-terracotta transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-playfair), serif" }}
                       >
-                        <path d="M7 17L17 7M17 7H7M17 7v10" />
-                      </svg>
-                    </a>
+                        {ex.name}
+                      </Link>
+                      {ex.isProject && (
+                        <span
+                          className="text-[9px] px-1.5 py-0.5 rounded-full bg-terracotta/10 text-terracotta font-semibold uppercase tracking-wider"
+                          style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                        >
+                          Community
+                        </span>
+                      )}
+                    </div>
+                    {ex.websiteUrl && (
+                      <a
+                        href={ex.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 mt-1"
+                        title={t("visitWebsite")}
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          className="text-brown/20 hover:text-terracotta transition-colors duration-300"
+                        >
+                          <path d="M7 17L17 7M17 7H7M17 7v10" />
+                        </svg>
+                      </a>
+                    )}
                   </div>
 
                   <p
@@ -307,15 +397,17 @@ export default function ExamplesPage() {
                         </span>
                       ))}
                     </div>
-                    <Link
-                      href={`/examples/${slugify(ex.name)}`}
-                      className="text-brown/30 hover:text-terracotta text-xs flex items-center gap-1 shrink-0 ml-2 transition-colors duration-200"
-                    >
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-                      </svg>
-                      {commentCount > 0 ? commentCount : ""}
-                    </Link>
+                    {!ex.isProject && (
+                      <Link
+                        href={`/examples/${slugify(ex.name)}`}
+                        className="text-brown/30 hover:text-terracotta text-xs flex items-center gap-1 shrink-0 ml-2 transition-colors duration-200"
+                      >
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                        </svg>
+                        {commentCount > 0 ? commentCount : ""}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -323,6 +415,14 @@ export default function ExamplesPage() {
           );
         })}
       </div>
+
+      {/* Infinite scroll sentinel */}
+      <div ref={sentinelRef} className="h-4" />
+      {hasMore && (
+        <div className="flex justify-center py-8">
+          <div className="w-6 h-6 border-2 border-brown-light/30 border-t-green-deep rounded-full animate-spin" />
+        </div>
+      )}
 
       {filtered.length === 0 && (
         <div className="text-center py-16">

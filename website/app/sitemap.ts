@@ -9,11 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/vision',
     '/get-started',
     '/contribute',
-    '/contribute',
     '/examples',
     '/contribute/discussions',
     '/contribute/ideas',
-    '/contribute/projects',
     '/auth/signin',
     '/auth/signup',
   ];

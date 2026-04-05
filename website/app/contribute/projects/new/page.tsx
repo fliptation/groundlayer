@@ -78,11 +78,9 @@ export default function NewProjectPage() {
     <article className="max-w-2xl mx-auto px-6 lg:px-10 py-20 md:py-28">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-brown/40 mb-8 font-sans">
-        <Link href="/contribute" className="hover:text-terracotta transition-colors">Contribute</Link>
+        <Link href="/examples" className="hover:text-terracotta transition-colors">Examples</Link>
         <span>/</span>
-        <Link href="/contribute/projects" className="hover:text-terracotta transition-colors">Projects</Link>
-        <span>/</span>
-        <span className="text-brown/70">New</span>
+        <span className="text-brown/70">Submit</span>
       </nav>
 
       <h1 className="text-3xl md:text-4xl font-bold text-green-deep mb-8 leading-tight font-display">
@@ -191,7 +189,7 @@ export default function NewProjectPage() {
                 {submitting ? "Submitting..." : "Submit Project"}
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="/contribute/projects">Cancel</Link>
+                <Link href="/examples">Cancel</Link>
               </Button>
             </div>
           </form>
